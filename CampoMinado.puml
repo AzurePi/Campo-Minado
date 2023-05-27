@@ -1,0 +1,64 @@
+@startuml
+
+package Campo-Minado{
+    class Tabuleiro{
+        - int tamanho
+        - ArrayList<ArrayList<Quadrado>> board
+    }
+    note top of Tabuleiro
+        O construtor de Tabuleiro constrói vários Quadrado para compor board
+        O parâmetro de tipo de cada Quadrado é aleatorizado
+    end note
+    note left of Tabuleiro::board
+        Um tabuleiro tem um número
+        quadrado perfeito de Quadrado
+    end note
+    class Quadrado <<T extends Conteudo>>{
+        - int i, j
+    }
+    note bottom of Quadrado
+        Quadrado existe para facilitar o
+        desenvolvimento da GUI
+    end note
+    note right of Quadrado::i
+        i e j indicam
+        a posição de
+        Quadrado no
+        Tabuleiro
+    end note
+
+    Quadrado "1" *-left- "1" Conteudo
+    Tabuleiro *-- "25...*" Quadrado
+
+
+    interface Clicavel{
+        + {abstract} int Revelar()
+    }
+    abstract class Conteudo{}
+    class Vazio{
+        + int Revelar()
+    }
+    class Numerado{
+        + int Revelar()
+    }
+    class Bomba{
+        + int Revelar()
+    }
+    note as N1
+        Revelar() devolverá
+        um número que
+        identifica o tipo
+        de Conteudo
+    end note
+
+    Clicavel <.. Conteudo
+    Conteudo <|-- Vazio
+    Conteudo <|-- Numerado
+    Conteudo <|-- Bomba
+    Vazio::Revelar .left. N1
+    Numerado::Revelar .right. N1
+    Bomba::Revelar .down. N1
+
+}
+
+@enduml
