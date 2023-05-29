@@ -1,3 +1,5 @@
+package campoMinado;
+
 public class Bomba extends Conteudo {
     @Override
     public int revelar() {
