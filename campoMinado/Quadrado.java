@@ -2,6 +2,16 @@ package campoMinado;
 
 public class Quadrado <T extends Conteudo>{
     private T conteudo;
-    private int i;
-    private int j;
+
+    public Quadrado(T conteudo) {
+        this.conteudo = conteudo;
+    }
+
+    public T getConteudo() {
+        return conteudo;
+    }
+
+    public void setConteudo(T conteudo) {
+        this.conteudo = conteudo;
+    }
 }
