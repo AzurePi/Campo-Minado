@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Tabuleiro {
-    //Atributos
+    //Atributos  -------------------------------------------------------------------------------------------------------
     private int tamanho;
     private ArrayList<ArrayList<Quadrado<?>>> board;
 
@@ -63,10 +63,13 @@ public class Tabuleiro {
             case 12 -> bombas = 50;
             default -> bombas = 0;
         }
+
+        //para cada bomba que deve estar no tabuleiro
         for (int i = 0; i < bombas; i++) {
+            //sorteamos uma coordenada
             do {
-                linha = random.nextInt(tamanho + 1);
-                coluna = random.nextInt(tamanho + 1);
+                linha = random.nextInt(tamanho);
+                coluna = random.nextInt(tamanho);
 
                 sorteado = board.get(linha).get(coluna).getConteudo() instanceof Bomba;
                 //instanceof retorna o boleano que controla o laço
@@ -80,12 +83,11 @@ public class Tabuleiro {
 
     public void preencheNumerado(int linha, int coluna) {
         for (int i = linha - 1; i <= linha + 1; i++) {
-            ArrayList<Quadrado<?>> arrayLinha = board.get(i);
             for (int j = coluna - 1; j <= coluna + 1; j++) {
-                Conteudo aux = arrayLinha.get(j).getConteudo();
-                if (coordenadaValida(i, j) && !(aux instanceof Bomba)) {
+                if (coordenadaValida(i, j) && !(board.get(i).get(j).getConteudo() instanceof Bomba)) {
+                    Conteudo aux = board.get(i).get(j).getConteudo();
                     if (aux instanceof Vazio) {
-                        arrayLinha.add(j, new Quadrado<>(new Numerado(1)));
+                        board.get(i).add(j, new Quadrado<>(new Numerado(1)));
                     } else if (aux instanceof Numerado) {
                         ((Numerado) aux).setDica(((Numerado) aux).getDica() + 1);
                         //(Numerado) board.get(i).get(j).getConteudo();
@@ -96,6 +98,6 @@ public class Tabuleiro {
     }
 
     private boolean coordenadaValida(int i, int j) {
-        return (i >= 0 && i < tamanho && j <= 0 && j < tamanho);
+        return (i >= 0 && i < tamanho && j >= 0 && j < tamanho);
     }
 }

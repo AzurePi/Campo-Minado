@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="" />
+    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="organização">
+      <change afterPath="$PROJECT_DIR$/GUI/Frame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/apertarBotao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/CampoMinado.puml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/propostaInicial/CampoMinado.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/uml.svg" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/propostaInicial/uml.svg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,18 +71,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ppcar\IdeaProjects\Campo-Minado\documentation\propostaInicial" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685040979534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="organização">
+      <created>1685903701612</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685903701612</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,7 +131,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="begin" />
+    <MESSAGE value="organização" />
+    <option name="LAST_COMMIT_MESSAGE" value="organização" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
