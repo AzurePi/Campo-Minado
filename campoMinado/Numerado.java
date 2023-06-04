@@ -1,8 +1,14 @@
 package campoMinado;
 
-public class Numerado extends Conteudo{
+public class Numerado extends Conteudo {
     private int dica;
 
+    //Construtor -------------------------------------------------------------------------------------------------------
+    public Numerado(int dica) {
+        this.dica = dica;
+    }
+
+    //Setters & Getters ------------------------------------------------------------------------------------------------
     public int getDica() {
         return dica;
     }
@@ -11,10 +17,7 @@ public class Numerado extends Conteudo{
         this.dica = dica;
     }
 
-    public Numerado(int dica) {
-        this.dica = dica;
-    }
-
+    //Métodos ----------------------------------------------------------------------------------------------------------
     @Override
     public int revelar() {
         return 0;
