@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="organização">
-      <change afterPath="$PROJECT_DIR$/GUI/Frame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/apertarBotao.java" afterDir="false" />
+    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="organização, começo da GUI">
+      <change afterPath="$PROJECT_DIR$/GUI/BotaoTabuleiro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/BotaoTabuleiroListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/MainPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/PlacarGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/assets/noun-bomb-238911.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/CampoMinado.puml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/propostaInicial/CampoMinado.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/uml.svg" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/propostaInicial/uml.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/apertarBotao.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -75,6 +78,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "1.8",
     "node.js.detected.package.eslint": "true",
@@ -84,11 +88,16 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="GUI" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ppcar\IdeaProjects\Campo-Minado\GUI\assets" />
       <recent name="C:\Users\ppcar\IdeaProjects\Campo-Minado\documentation\propostaInicial" />
     </key>
   </component>
@@ -100,6 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684787029436</updated>
+      <workItem from="1686053754055" duration="8034000" />
     </task>
     <task id="LOCAL-00001" summary="begin">
       <created>1685040979534</created>
@@ -115,8 +125,18 @@
       <option name="project" value="LOCAL" />
       <updated>1685903701612</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="organização, começo da GUI">
+      <created>1685908209182</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685908209182</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -132,7 +152,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="begin" />
     <MESSAGE value="organização" />
-    <option name="LAST_COMMIT_MESSAGE" value="organização" />
+    <MESSAGE value="organização, começo da GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="organização, começo da GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

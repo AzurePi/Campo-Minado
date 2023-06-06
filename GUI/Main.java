@@ -2,8 +2,8 @@ package GUI;
 
 import javax.swing.*;
 
-public class Frame {
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -14,16 +14,16 @@ public class Frame {
 
     private static void createAndShowGUI() {
         JFrame f = new JFrame("Campo Minado");
-        TelaInicialGUI inicial = new TelaInicialGUI();
-        TabuleiroGUI tabuleiro = new TabuleiroGUI(5);
 
-        inicial.setVisible(true);
-        tabuleiro.setVisible(false);
+        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.svg");
+        f.setIconImage(iconeBomba.getImage());
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(580, 600);
         f.setVisible(true);
 
-        f.add(inicial);
+        f.add(new MainPanel());
+
+
     }
 }
