@@ -22,6 +22,7 @@ public class Main {
         f.setSize(580, 600);
 
         f.add(new MainPanel());
+        f.pack();
         f.setVisible(true);
     }
 }

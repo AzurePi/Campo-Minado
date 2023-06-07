@@ -60,7 +60,7 @@ public class Tabuleiro {
         switch (tamanho) {
             case 5 -> bombas = 7;
             case 7 -> bombas = 20;
-            case 12 -> bombas = 50;
+            case 11 -> bombas = 45;
             default -> bombas = 0;
         }
 

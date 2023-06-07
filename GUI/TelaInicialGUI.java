@@ -59,22 +59,20 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
 
-        MainPanel parent = (MainPanel) this.getParent();
+        MainPanel parent = (MainPanel) this.getParent().getParent();
         CardLayout layout = parent.getLayout();
         JPanel telas = parent.getTelas();
 
-        if (source == botaoJogar){
-            if(facil.isSelected())
+        if (source == botaoJogar) {
+            if (facil.isSelected())
                 parent.getTabuleiro().inicializar(5);
-            else if(medio.isSelected())
+            else if (medio.isSelected())
                 parent.getTabuleiro().inicializar(7);
-            else if(dificil.isSelected())
-                parent.getTabuleiro().inicializar(12);
+            else if (dificil.isSelected())
+                parent.getTabuleiro().inicializar(11);
 
             layout.show(telas, parent.getTABULEIRO()); //mostra o tabuleiro na tela
-        }
-
-        else if (source == botaoRecordes)
+        } else if (source == botaoRecordes)
             layout.show(telas, parent.getPLACAR());
     }
 }

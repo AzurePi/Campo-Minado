@@ -3,13 +3,18 @@ package GUI;
 import campoMinado.Tabuleiro;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TabuleiroGUI extends JPanel {
-    Tabuleiro t;
+    private Tabuleiro t;
+    private Timer cronometro;
+    private boolean cronometroIniciado;
+    private JLabel labelCronometro;
+
+    public TabuleiroGUI(){
+    }
 
     private static class ListenerMenu implements ActionListener {
         @Override
@@ -25,35 +30,61 @@ public class TabuleiroGUI extends JPanel {
         }
     }
 
-    public void inicializar(int tamanho){
+    public void inicializar(int tamanho) {
         t = new Tabuleiro(tamanho);
-        DefaultTableModel model = new DefaultTableModel(tamanho, tamanho);
-        JTable campo = new JTable(tamanho, tamanho);
+
+        this.setLayout(new GridLayout(tamanho+1, tamanho, 2, 2));
+
+        for(int i = 0; i < tamanho/2; i++){
+            JLabel filler = new JLabel();
+            this.add(filler);
+        }
+        labelCronometro = new JLabel("0 : 0");
+        labelCronometro.setHorizontalAlignment(SwingConstants.CENTER);
+        this.add(labelCronometro);
+        for(int i = 0; i < tamanho/2; i++){
+            JLabel filler = new JLabel();
+            this.add(filler);
+        }
+
+        JButton[][] botoes = new JButton[tamanho][tamanho];
 
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
-                BotaoTabuleiro b = new BotaoTabuleiro(new ImageIcon());
+                JButton botao = new JButton();
+                botao.setPreferredSize(new Dimension(30, 30));
 
-                //cria uma classe anônima que implementa BotaoTabuleiroListener
-                b.addTableButtonListener(new BotaoTabuleiroListener() {
+                botao.addActionListener(new ActionListener() {
                     @Override
-                    public void botaoClicado(int linha, int coluna) {
-                        //verifica que tipo de conteúdo temos na matriz do campoMinado
-                        //e age de acordo
-
-                        //se é vazio, abre todos os vazios (abrir, nesse caso, envolve trocar a cor)
-                        //se é número, troca a cor coloca a imagem do número no botão
-                        //se é bomba, troca a cor, coloca a imagem da bomba, e mostra uma mensagem de fim de jogo
+                    public void actionPerformed(ActionEvent e) {
+                        if (!cronometroIniciado) {
+                            iniciarCronometro();
+                            cronometroIniciado = true;
+                        }
                     }
                 });
 
-                TableColumn col = new TableColumn();
-                col.setCellRenderer(b);
-                col.setCellEditor(b);
-                campo.addColumn(col); //TODO: não tenho certeza se é assim que adicionamos as coisas na tabela
+                botoes[i][j] = botao;
+                this.add(botao);
             }
         }
+    }
 
-        this.add(campo);
+    private void iniciarCronometro() {
+        cronometro = new Timer(1000, new ActionListener() {
+            int segundos = 0;
+            int minutos = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                segundos++;
+                if (segundos == 60) {
+                    minutos++;
+                    segundos = 0;
+                }
+                labelCronometro.setText(minutos + " : " + segundos);
+            }
+        });
+        cronometro.start();
     }
 }
