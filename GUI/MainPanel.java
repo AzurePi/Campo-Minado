@@ -6,6 +6,9 @@ import java.awt.*;
 
 //frame principal, dentro do qual se alteram os conteúdos (JPanel) exibidos
 public class MainPanel extends JPanel {
+    TelaInicialGUI menuInicial;
+    TabuleiroGUI tabuleiro;
+    PlacarGUI placar;
     private final String MENUINICIAL;
     private final String TABULEIRO;
     private final String PLACAR;
@@ -16,9 +19,13 @@ public class MainPanel extends JPanel {
         layout = new CardLayout();
         telas = new JPanel(layout);
 
-        JPanel menuInicial = new TelaInicialGUI();
-        JPanel tabuleiro = new TabuleiroGUI(5);
-        JPanel placar = new PlacarGUI();
+        menuInicial = new TelaInicialGUI();
+        tabuleiro = new TabuleiroGUI();
+        placar = new PlacarGUI();
+
+        menuInicial.setVisible(true);
+        tabuleiro.setVisible(true);
+        placar.setVisible(true);
 
         MENUINICIAL = "JPanel do menu inicial";
         TABULEIRO = "JPanel com o tabuleiro do jogo";
@@ -27,9 +34,35 @@ public class MainPanel extends JPanel {
         telas.add(menuInicial, MENUINICIAL);
         telas.add(tabuleiro, TABULEIRO);
         telas.add(placar, PLACAR);
+        telas.setVisible(true);
 
         this.setVisible(true);
+        this.add(telas);
         layout.show(telas, MENUINICIAL);
+    }
+
+    public TelaInicialGUI getMenuInicial() {
+        return menuInicial;
+    }
+
+    public void setMenuInicial(TelaInicialGUI menuInicial) {
+        this.menuInicial = menuInicial;
+    }
+
+    public TabuleiroGUI getTabuleiro() {
+        return tabuleiro;
+    }
+
+    public void setTabuleiro(TabuleiroGUI tabuleiro) {
+        this.tabuleiro = tabuleiro;
+    }
+
+    public PlacarGUI getPlacar() {
+        return placar;
+    }
+
+    public void setPlacar(PlacarGUI placar) {
+        this.placar = placar;
     }
 
     @Override

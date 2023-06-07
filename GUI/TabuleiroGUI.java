@@ -3,6 +3,7 @@ package GUI;
 import campoMinado.Tabuleiro;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,9 +11,23 @@ import java.awt.event.ActionListener;
 public class TabuleiroGUI extends JPanel {
     Tabuleiro t;
 
-    public TabuleiroGUI(int tamanho) {
-        t = new Tabuleiro(tamanho);
+    private static class ListenerMenu implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
 
+        }
+    }
+
+    private static class ListenerJogo implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public void inicializar(int tamanho){
+        t = new Tabuleiro(tamanho);
+        DefaultTableModel model = new DefaultTableModel(tamanho, tamanho);
         JTable campo = new JTable(tamanho, tamanho);
 
         for (int i = 0; i < tamanho; i++) {
@@ -40,19 +55,5 @@ public class TabuleiroGUI extends JPanel {
         }
 
         this.add(campo);
-    }
-
-    private static class ListenerMenu implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
-    private static class ListenerJogo implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
     }
 }

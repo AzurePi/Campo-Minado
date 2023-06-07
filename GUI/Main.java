@@ -15,15 +15,13 @@ public class Main {
     private static void createAndShowGUI() {
         JFrame f = new JFrame("Campo Minado");
 
-        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.svg");
+        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
         f.setIconImage(iconeBomba.getImage());
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(580, 600);
-        f.setVisible(true);
 
         f.add(new MainPanel());
-
-
+        f.setVisible(true);
     }
 }
