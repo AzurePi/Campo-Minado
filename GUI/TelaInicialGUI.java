@@ -1,7 +1,3 @@
-/*
-Bomb by icon 54 from <a href="https://thenounproject.com/browse/icons/term/bomb/" target="_blank" title="Bomb Icons">Noun Project</a>
-*/
-
 package GUI;
 
 import javax.swing.*;

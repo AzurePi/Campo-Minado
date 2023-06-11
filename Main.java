@@ -1,4 +1,9 @@
-package GUI;
+/*
+Bomb by icon 54 from <a href="https://thenounproject.com/browse/icons/term/bomb/" target="_blank" title="Bomb Icons">Noun Project</a>
+Flag by Elliott Counts from <a href="https://thenounproject.com/browse/icons/term/flag/" target="_blank" title="Flag Icons">Noun Project</a>
+*/
+
+import GUI.MainPanel;
 
 import javax.swing.*;
 
