@@ -77,21 +77,20 @@ public class Tabuleiro {
             } while (sorteado);
 
             board.get(linha).add(coluna, new Quadrado<>(new Bomba()));
-            preencheNumerado(linha, coluna);
+            preencheDicas(linha, coluna);
         }
     }
 
-    public void preencheNumerado(int linha, int coluna) {
+    public void preencheDicas(int linha, int coluna) {
         for (int i = linha - 1; i <= linha + 1; i++) {
             for (int j = coluna - 1; j <= coluna + 1; j++) {
-                if (coordenadaValida(i,j, tamanho) && !(board.get(i).get(j).getConteudo() instanceof Bomba)) {
+                if (coordenadaValida(i, j, tamanho) && (i != linha && j != coluna)) {
                     Conteudo aux = board.get(i).get(j).getConteudo();
-                    if (aux instanceof Vazio) {
+
+                    if (aux instanceof Vazio)
                         board.get(i).add(j, new Quadrado<>(new Numerado(1)));
-                    } else if (aux instanceof Numerado) {
+                    else if (aux instanceof Numerado)
                         ((Numerado) aux).setDica(((Numerado) aux).getDica() + 1);
-                        //(Numerado) board.get(i).get(j).getConteudo();
-                    }
                 }
             }
         }

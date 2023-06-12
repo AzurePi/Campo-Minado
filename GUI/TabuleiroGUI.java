@@ -1,16 +1,15 @@
 package GUI;
 
-import campoMinado.*;
+import campoMinado.Quadrado;
+import campoMinado.Tabuleiro;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
-import java.io.IOException;
+import java.net.URL;
 
 public class TabuleiroGUI extends JPanel {
     private static Tabuleiro t;
@@ -18,8 +17,23 @@ public class TabuleiroGUI extends JPanel {
     private static Timer cronometro;
     private static boolean cronometroIniciado;
     private static JLabel labelCronometro;
+    private static ImageIcon iconeBandeira;
+    private static ImageIcon iconeBomba;
+    private static int cliques = 0;
 
-    public TabuleiroGUI() {
+    public TabuleiroGUI(){
+        URL bandeiraURL = getClass().getResource("GUI/assets/noun-flag-5786229.png");
+        URL bombaURL = getClass().getResource("GUI/assets/noun-bomb-238911.png");
+
+        if (bandeiraURL != null)
+            iconeBandeira = new ImageIcon(bandeiraURL);
+        else
+            iconeBandeira = new ImageIcon("GUI/assets/noun-flag-5786229.png");
+
+        if (bombaURL != null)
+            iconeBomba = new ImageIcon(bombaURL);
+        else
+            iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
     }
 
     private static class ListenerJogo implements MouseListener {
@@ -35,27 +49,31 @@ public class TabuleiroGUI extends JPanel {
             NossoBotao source = (NossoBotao) e.getSource();
 
             //botão esquerdo -> revela o conteúdo
-            // botão direito -> coloca uma bandeira
-            if (button == 0) {
+            //botão direito -> coloca uma bandeira
+            if (button == 1) {
+                cliques++;
+
                 int i = source.getI();
                 int j = source.getJ();
 
                 Quadrado<?> quadrado = t.getBoard().get(i).get(j);
-
                 int conteudo = quadrado.getConteudo().revelar();
 
                 if (conteudo == -1) {
-
-                } else if (conteudo == 0) {
-                    abrirVazio(i,j);
-                } else {
+                    abrirBombas();
+                    cronometro.stop();
+                    //mensagem de perda
+                    //retorna à tela inicial
+                } else if (conteudo == 0)
+                    abrirVazio(i, j);
+                else
                     abrirNumerado(i, j);
-                }
 
             } else if (button == 3 && !source.isFoiClickado()) {
                 //se não há bandeira, desativamos o botão
                 //se há bandeira, reativamos o botão
                 source.setEnabled(!source.isEnabled());
+                source.setDisabledIcon(iconeBandeira);
             }
         }
 
@@ -79,29 +97,44 @@ public class TabuleiroGUI extends JPanel {
 
         }
 
-        public void abrirVazio(int linha, int coluna){
-            botoes[linha][coluna].setEnabled(false);
-            botoes[linha][coluna].setFoiClickado(true);
-
-            for (int i = linha - 1; i <= linha + 1; i++) {
-                for (int j = coluna - 1; j <= coluna + 1; j++) {
-                    if(Tabuleiro.coordenadaValida(i , j, t.getTamanho())){
-                        if(t.getBoard().get(i).get(j).getConteudo().revelar() == 0){
-                            abrirVazio(i, j);
-                        }
-                        else if(t.getBoard().get(i).get(j).getConteudo().revelar() != -1){
-                            abrirNumerado(i, j);
-                        }
+        private void abrirBombas() {
+            for (int i = 0; i < tamanho; i++) {
+                for (int j = 0; j < tamanho; j++) {
+                    int conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
+                    if (conteudo == -1) {
+                        botoes[i][j].setEnabled(false);
+                        botoes[i][j].setDisabledIcon(iconeBomba);
                     }
                 }
             }
-
         }
 
-        private void abrirNumerado(int i, int j) {
-            botoes[i][j].setEnabled(false);
-            botoes[i][j].setFoiClickado(true);
-            botoes[i][j].setText(String.valueOf(t.getBoard().get(i).get(j).getConteudo().revelar()));
+        public void abrirVazio(int linha, int coluna) {
+            NossoBotao botao = botoes[linha][coluna];
+            if (botao.isEnabled())
+                botao.setEnabled(false);
+            botao.setFoiClickado(true);
+
+            for (int i = linha - 1; i <= linha + 1; i++) {
+                for (int j = coluna - 1; j <= coluna + 1; j++) {
+                    if (Tabuleiro.coordenadaValida(i, j, t.getTamanho())) {
+                        int conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
+                        if (conteudo == 0 && botoes[i][j].isEnabled())
+                            abrirVazio(i, j);
+                        else if (conteudo != -1)
+                            abrirNumerado(i, j);
+                    }
+                }
+            }
+        }
+
+        private void abrirNumerado(int linha, int coluna) {
+            NossoBotao numerado = botoes[linha][coluna];
+            numerado.setEnabled(false);
+            numerado.setFoiClickado(true);
+
+            int numero = t.getBoard().get(linha).get(coluna).getConteudo().revelar();
+            numerado.setText(String.valueOf(numero));
         }
     }
 
@@ -120,30 +153,29 @@ public class TabuleiroGUI extends JPanel {
 
 
         botoes = new NossoBotao[tamanho][tamanho];
-        ImageIcon bandeira;
-
-        //redimensiona a imagem da bandeira
-        try {
-            File bandeiraFile = new File("GUI/assets/noun-flag-5786229.png");
-            Image bandeiraImagem = ImageIO.read(bandeiraFile);
-            Image resized = bandeiraImagem.getScaledInstance(30, -1, Image.SCALE_DEFAULT);
-
-            bandeira = new ImageIcon(resized);
-        } catch (IOException e) {
-            bandeira = new ImageIcon("GUI/assets/noun-flag-5786229.png");
-        }
+        ListenerJogo listener = new ListenerJogo();
 
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
-                NossoBotao botao = new NossoBotao(i,j);
-                botao.setPreferredSize(new Dimension(30, 30));
-                botao.setDisabledIcon(bandeira); //ícone que só aparece quando o botão está desativado
-                //TODO: fazer a imagem aparecer de fato (:
+                NossoBotao botao = new NossoBotao(i, j);
 
-                botao.addMouseListener(new ListenerJogo());
+                botao.addMouseListener(listener);
+
+                botao.setEnabled(false);
+                botao.setFoiClickado(true);
+                if (t.getBoard().get(i).get(j).getConteudo().revelar() == 0) {
+                    botao.setText("vazio");
+                } else if (t.getBoard().get(i).get(j).getConteudo().revelar() == -1) {
+                    botao.setDisabledIcon(iconeBomba);
+                    botao.setText("bomba");
+                } else {
+                    int numero = t.getBoard().get(i).get(i).getConteudo().revelar();
+                    botao.setText(String.valueOf(numero));
+                }
+
 
                 botoes[i][j] = botao;
-                this.add(botao); //adiciona o botão ao JPanel
+                this.add(botao);
             }
         }
     }
