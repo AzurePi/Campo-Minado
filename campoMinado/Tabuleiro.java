@@ -84,7 +84,7 @@ public class Tabuleiro {
     public void preencheNumerado(int linha, int coluna) {
         for (int i = linha - 1; i <= linha + 1; i++) {
             for (int j = coluna - 1; j <= coluna + 1; j++) {
-                if (coordenadaValida(i, j) && !(board.get(i).get(j).getConteudo() instanceof Bomba)) {
+                if (coordenadaValida(i,j, tamanho) && !(board.get(i).get(j).getConteudo() instanceof Bomba)) {
                     Conteudo aux = board.get(i).get(j).getConteudo();
                     if (aux instanceof Vazio) {
                         board.get(i).add(j, new Quadrado<>(new Numerado(1)));
@@ -97,7 +97,7 @@ public class Tabuleiro {
         }
     }
 
-    private boolean coordenadaValida(int i, int j) {
+    public static boolean coordenadaValida(int i, int j, int tamanho) {
         return (i >= 0 && i < tamanho && j >= 0 && j < tamanho);
     }
 }

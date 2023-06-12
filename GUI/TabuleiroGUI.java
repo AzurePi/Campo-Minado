@@ -1,7 +1,6 @@
 package GUI;
 
-import campoMinado.Quadrado;
-import campoMinado.Tabuleiro;
+import campoMinado.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,60 +14,45 @@ import java.io.IOException;
 
 public class TabuleiroGUI extends JPanel {
     private static Tabuleiro t;
-    private static JButton[][] botoes;
-    private Timer cronometro;
-    private boolean cronometroIniciado;
-    private JLabel labelCronometro;
+    private static NossoBotao[][] botoes;
+    private static Timer cronometro;
+    private static boolean cronometroIniciado;
+    private static JLabel labelCronometro;
 
     public TabuleiroGUI() {
     }
 
-    private static class ListenerMenu implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
     private static class ListenerJogo implements MouseListener {
-        int tamanho;
-
-        public ListenerJogo(JButton[][] botoes) {
-            tamanho = botoes.length;
-        }
+        int tamanho = t.getTamanho();
 
         @Override
         public void mouseClicked(MouseEvent e) {
+            if (!cronometroIniciado) {
+                iniciarCronometro();
+                cronometroIniciado = true;
+            }
             int button = e.getButton();
-            JButton source = (JButton) e.getSource();
+            NossoBotao source = (NossoBotao) e.getSource();
 
             //botão esquerdo -> revela o conteúdo
             // botão direito -> coloca uma bandeira
             if (button == 0) {
-                int i = 0, j = 0;
+                int i = source.getI();
+                int j = source.getJ();
 
-                //TODO: esse while pode ser uma outra função
-                while (i < tamanho && j < tamanho && botoes[i][j] != source) {
-                    j++; //passamos para o próximo quadrado
-                    if (j == tamanho) {
-                        j = 0; //voltamos à primeira coluna
-                        i++; //passamos para a próxima linha
-                    }
-                }
                 Quadrado<?> quadrado = t.getBoard().get(i).get(j);
+
                 int conteudo = quadrado.getConteudo().revelar();
 
                 if (conteudo == -1) {
-                    //é bomba
+
                 } else if (conteudo == 0) {
-                    //é quadrado vazio
-                    //faz toda a maracutaia de abrir o resto
+                    abrirVazio(i,j);
                 } else {
-                    //é quadrado numerado
-                    //trocamos a imagem, o fundo, etc
+                    abrirNumerado(i, j);
                 }
 
-            } else if (button == 3) {
+            } else if (button == 3 && !source.isFoiClickado()) {
                 //se não há bandeira, desativamos o botão
                 //se há bandeira, reativamos o botão
                 source.setEnabled(!source.isEnabled());
@@ -94,6 +78,31 @@ public class TabuleiroGUI extends JPanel {
         public void mouseExited(MouseEvent e) {
 
         }
+
+        public void abrirVazio(int linha, int coluna){
+            botoes[linha][coluna].setEnabled(false);
+            botoes[linha][coluna].setFoiClickado(true);
+
+            for (int i = linha - 1; i <= linha + 1; i++) {
+                for (int j = coluna - 1; j <= coluna + 1; j++) {
+                    if(Tabuleiro.coordenadaValida(i , j, t.getTamanho())){
+                        if(t.getBoard().get(i).get(j).getConteudo().revelar() == 0){
+                            abrirVazio(i, j);
+                        }
+                        else if(t.getBoard().get(i).get(j).getConteudo().revelar() != -1){
+                            abrirNumerado(i, j);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void abrirNumerado(int i, int j) {
+            botoes[i][j].setEnabled(false);
+            botoes[i][j].setFoiClickado(true);
+            botoes[i][j].setText(String.valueOf(t.getBoard().get(i).get(j).getConteudo().revelar()));
+        }
     }
 
     public void inicializar(int tamanho) {
@@ -110,7 +119,7 @@ public class TabuleiroGUI extends JPanel {
             this.add(new JLabel()); //preenche com fillers
 
 
-        botoes = new JButton[tamanho][tamanho];
+        botoes = new NossoBotao[tamanho][tamanho];
         ImageIcon bandeira;
 
         //redimensiona a imagem da bandeira
@@ -126,23 +135,12 @@ public class TabuleiroGUI extends JPanel {
 
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
-                JButton botao = new JButton();
+                NossoBotao botao = new NossoBotao(i,j);
                 botao.setPreferredSize(new Dimension(30, 30));
                 botao.setDisabledIcon(bandeira); //ícone que só aparece quando o botão está desativado
                 //TODO: fazer a imagem aparecer de fato (:
 
-
-                //adiciona um ActionListener para controlar o cronômetro
-                botao.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (!cronometroIniciado) {
-                            iniciarCronometro();
-                            cronometroIniciado = true;
-                        }
-                    }
-                });
-                botao.addMouseListener(new ListenerJogo(botoes));
+                botao.addMouseListener(new ListenerJogo());
 
                 botoes[i][j] = botao;
                 this.add(botao); //adiciona o botão ao JPanel
@@ -150,7 +148,7 @@ public class TabuleiroGUI extends JPanel {
         }
     }
 
-    private void iniciarCronometro() {
+    private static void iniciarCronometro() {
         cronometro = new Timer(1000, new ActionListener() {
             int segundos = 0;
             int minutos = 0;

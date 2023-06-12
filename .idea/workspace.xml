@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="begin">
-      <change afterPath="$PROJECT_DIR$/GUI/assets/noun-flag-5786229.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/NossoBotao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Campo-Minado.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campo-Minado.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Bomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Bomba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Numerado.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Numerado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,29 +71,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="GUI" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ppcar\IdeaProjects\Campo-Minado\GUI\assets" />
       <recent name="C:\Users\Azure\IdeaProjects\Campo-Minado\GUI\assets" />
     </key>
   </component>
@@ -114,9 +108,6 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -130,14 +121,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="begin" />
-    <MESSAGE value="organização" />
-    <MESSAGE value="organização, começo da GUI" />
-    <MESSAGE value="desenvolvimento da GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="desenvolvimento da GUI" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
     <option name="LAST_COMMIT_MESSAGE" value="begin" />
   </component>
 </project>
