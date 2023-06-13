@@ -1,7 +1,7 @@
-package GUI;
+package src.GUI;
 
-import campoMinado.Quadrado;
-import campoMinado.Tabuleiro;
+import src.campoMinado.Quadrado;
+import src.campoMinado.Tabuleiro;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,9 +19,10 @@ public class TabuleiroGUI extends JPanel {
     private static JLabel labelCronometro;
     private static ImageIcon iconeBandeira;
     private static ImageIcon iconeBomba;
-    private static int cliques = 0;
+    private static int cliques;
 
-    public TabuleiroGUI(){
+    //Construtor -------------------------------------------------------------------------------------------------------
+    public TabuleiroGUI() {
         URL bandeiraURL = getClass().getResource("GUI/assets/noun-flag-5786229.png");
         URL bombaURL = getClass().getResource("GUI/assets/noun-bomb-238911.png");
 
@@ -34,8 +35,76 @@ public class TabuleiroGUI extends JPanel {
             iconeBomba = new ImageIcon(bombaURL);
         else
             iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
+
+        cliques = 0;
     }
 
+    //Setters & Getters ------------------------------------------------------------------------------------------------
+    public static Tabuleiro getT() {
+        return t;
+    }
+
+    public static void setT(Tabuleiro t) {
+        TabuleiroGUI.t = t;
+    }
+
+    public static NossoBotao[][] getBotoes() {
+        return botoes;
+    }
+
+    public static void setBotoes(NossoBotao[][] botoes) {
+        TabuleiroGUI.botoes = botoes;
+    }
+
+    public static Timer getCronometro() {
+        return cronometro;
+    }
+
+    public static void setCronometro(Timer cronometro) {
+        TabuleiroGUI.cronometro = cronometro;
+    }
+
+    public static boolean isCronometroIniciado() {
+        return cronometroIniciado;
+    }
+
+    public static void setCronometroIniciado(boolean cronometroIniciado) {
+        TabuleiroGUI.cronometroIniciado = cronometroIniciado;
+    }
+
+    public static JLabel getLabelCronometro() {
+        return labelCronometro;
+    }
+
+    public static void setLabelCronometro(JLabel labelCronometro) {
+        TabuleiroGUI.labelCronometro = labelCronometro;
+    }
+
+    public static ImageIcon getIconeBandeira() {
+        return iconeBandeira;
+    }
+
+    public static void setIconeBandeira(ImageIcon iconeBandeira) {
+        TabuleiroGUI.iconeBandeira = iconeBandeira;
+    }
+
+    public static ImageIcon getIconeBomba() {
+        return iconeBomba;
+    }
+
+    public static void setIconeBomba(ImageIcon iconeBomba) {
+        TabuleiroGUI.iconeBomba = iconeBomba;
+    }
+
+    public static int getCliques() {
+        return cliques;
+    }
+
+    public static void setCliques(int cliques) {
+        TabuleiroGUI.cliques = cliques;
+    }
+
+    //Subclasses --------------------------------------------------------------------------------------------------------
     private static class ListenerJogo implements MouseListener {
         int tamanho = t.getTamanho();
 
@@ -79,22 +148,18 @@ public class TabuleiroGUI extends JPanel {
 
         @Override
         public void mousePressed(MouseEvent e) {
-
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-
         }
 
         @Override
         public void mouseEntered(MouseEvent e) {
-
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
-
         }
 
         private void abrirBombas() {
@@ -138,6 +203,7 @@ public class TabuleiroGUI extends JPanel {
         }
     }
 
+    //Métodos ----------------------------------------------------------------------------------------------------------
     public void inicializar(int tamanho) {
         t = new Tabuleiro(tamanho);
 
@@ -159,8 +225,7 @@ public class TabuleiroGUI extends JPanel {
             for (int j = 0; j < tamanho; j++) {
                 NossoBotao botao = new NossoBotao(i, j);
 
-                botao.addMouseListener(listener);
-
+                /*      Teste para verificar a disposição das coisas no tabuleiro
                 botao.setEnabled(false);
                 botao.setFoiClickado(true);
                 if (t.getBoard().get(i).get(j).getConteudo().revelar() == 0) {
@@ -172,8 +237,9 @@ public class TabuleiroGUI extends JPanel {
                     int numero = t.getBoard().get(i).get(i).getConteudo().revelar();
                     botao.setText(String.valueOf(numero));
                 }
+                */
 
-
+                botao.addMouseListener(listener);
                 botoes[i][j] = botao;
                 this.add(botao);
             }

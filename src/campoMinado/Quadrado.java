@@ -1,4 +1,4 @@
-package campoMinado;
+package src.campoMinado;
 
 public class Quadrado<T extends Conteudo> {
     private T conteudo;

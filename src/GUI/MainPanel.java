@@ -1,4 +1,4 @@
-package GUI;
+package src.GUI;
 
 
 import javax.swing.*;
@@ -15,6 +15,7 @@ public class MainPanel extends JPanel {
     private final CardLayout layout; //https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html
     private final JPanel telas;
 
+    //Construtor -------------------------------------------------------------------------------------------------------
     public MainPanel() {
         layout = new CardLayout();
         telas = new JPanel(layout);
@@ -29,7 +30,7 @@ public class MainPanel extends JPanel {
 
         MENUINICIAL = "JPanel do menu inicial";
         TABULEIRO = "JPanel com o tabuleiro do jogo";
-        PLACAR = "JPanel com o placar";
+        PLACAR = "JPanel com o src.placar";
 
         telas.add(menuInicial, MENUINICIAL);
         telas.add(tabuleiro, TABULEIRO);
@@ -41,6 +42,7 @@ public class MainPanel extends JPanel {
         layout.show(telas, MENUINICIAL);
     }
 
+    //Setters & Getters ------------------------------------------------------------------------------------------------
     public TelaInicialGUI getMenuInicial() {
         return menuInicial;
     }

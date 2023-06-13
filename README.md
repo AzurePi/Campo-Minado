@@ -3,7 +3,7 @@ Projeto de um jogo de Campo Minado feito como projeto para a matéria de Program
 
 
 ### Funcionalidades principais
-Interface gráfica com menu inicial, jogo e placar de pontuação. Implementação do jogo de campo minado. Armazenamento do placar em um arquivo.
+Interface gráfica com menu inicial, jogo e src.placar de pontuação. Implementação do jogo de campo minado. Armazenamento do src.placar em um arquivo.
 
 
 ### Conceitos implementados

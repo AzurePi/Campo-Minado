@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="begin">
-      <change afterPath="$PROJECT_DIR$/GUI/NossoBotao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Campo-Minado.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campo-Minado.iml" afterDir="false" />
+    <list default="true" id="95e2ff82-b0c7-4332-8d95-3ac6040a548f" name="Changes" comment="desenvolvimento da GUI">
+      <change afterPath="$PROJECT_DIR$/exceptions/InvalidNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/placar/Placar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/placar/Pontuacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Bomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Bomba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Numerado.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Numerado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/NossoBotao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/NossoBotao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/PlacarGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/TelaInicialGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TelaInicialGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/assets/noun-bomb-238911.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/assets/noun-bomb-238911.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/assets/noun-flag-5786229.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/assets/noun-flag-5786229.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Bomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Bomba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Clicavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Clicavel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Conteudo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Conteudo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Numerado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Numerado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Quadrado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Quadrado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/campoMinado/Vazio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Vazio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/propostaInicial/uml.svg" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/propostaInicial/uml.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,106 +35,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="5" />
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1685902856" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1684787100" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2QACWSK5i0m4nwusHahEvvQ5qUV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Azure\IdeaProjects\Campo-Minado\GUI\assets" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="exceptions" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="" />
-      <created>1684787029436</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1684787029436</updated>
-    </task>
-    <task id="LOCAL-00001" summary="begin">
-      <created>1685040979534</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1685040979534</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="begin" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package GUI;
+package src.GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +11,7 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
     JButton botaoJogar;
     JButton botaoRecordes;
 
+    //Construtor -------------------------------------------------------------------------------------------------------
     public TelaInicialGUI() {
         JPanel painelTitulo = new JPanel();
 
@@ -51,6 +52,7 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
         this.setVisible(true);
     }
 
+    //Métodos ----------------------------------------------------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
