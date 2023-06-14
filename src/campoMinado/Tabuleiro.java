@@ -76,7 +76,7 @@ public class Tabuleiro {
                 //Note que se não for do tipo bomba, o boleano retornado é falso
             } while (sorteado);
 
-            board.get(linha).add(coluna, new Quadrado<>(new Bomba()));
+            board.get(linha).set(coluna, new Quadrado<>(new Bomba()));
             preencheDicas(linha, coluna);
         }
     }
@@ -88,7 +88,7 @@ public class Tabuleiro {
                     Conteudo aux = board.get(i).get(j).getConteudo();
 
                     if (aux instanceof Vazio)
-                        board.get(i).add(j, new Quadrado<>(new Numerado(1)));
+                        board.get(i).set(j, new Quadrado<>(new Numerado(1)));
                     else if (aux instanceof Numerado)
                         ((Numerado) aux).setDica(((Numerado) aux).getDica() + 1);
                 }

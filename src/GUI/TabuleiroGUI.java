@@ -23,86 +23,24 @@ public class TabuleiroGUI extends JPanel {
 
     //Construtor -------------------------------------------------------------------------------------------------------
     public TabuleiroGUI() {
-        URL bandeiraURL = getClass().getResource("GUI/assets/noun-flag-5786229.png");
-        URL bombaURL = getClass().getResource("GUI/assets/noun-bomb-238911.png");
+        URL bandeiraURL = getClass().getResource("src/GUI/assets/noun-flag-5786229.png");
+        URL bombaURL = getClass().getResource("src/GUI/assets/noun-bomb-238911.png");
 
         if (bandeiraURL != null)
             iconeBandeira = new ImageIcon(bandeiraURL);
         else
-            iconeBandeira = new ImageIcon("GUI/assets/noun-flag-5786229.png");
+            iconeBandeira = new ImageIcon("src/GUI/assets/noun-flag-5786229.png");
 
         if (bombaURL != null)
             iconeBomba = new ImageIcon(bombaURL);
         else
-            iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
+            iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
 
         cliques = 0;
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
-    public static Tabuleiro getT() {
-        return t;
-    }
 
-    public static void setT(Tabuleiro t) {
-        TabuleiroGUI.t = t;
-    }
-
-    public static NossoBotao[][] getBotoes() {
-        return botoes;
-    }
-
-    public static void setBotoes(NossoBotao[][] botoes) {
-        TabuleiroGUI.botoes = botoes;
-    }
-
-    public static Timer getCronometro() {
-        return cronometro;
-    }
-
-    public static void setCronometro(Timer cronometro) {
-        TabuleiroGUI.cronometro = cronometro;
-    }
-
-    public static boolean isCronometroIniciado() {
-        return cronometroIniciado;
-    }
-
-    public static void setCronometroIniciado(boolean cronometroIniciado) {
-        TabuleiroGUI.cronometroIniciado = cronometroIniciado;
-    }
-
-    public static JLabel getLabelCronometro() {
-        return labelCronometro;
-    }
-
-    public static void setLabelCronometro(JLabel labelCronometro) {
-        TabuleiroGUI.labelCronometro = labelCronometro;
-    }
-
-    public static ImageIcon getIconeBandeira() {
-        return iconeBandeira;
-    }
-
-    public static void setIconeBandeira(ImageIcon iconeBandeira) {
-        TabuleiroGUI.iconeBandeira = iconeBandeira;
-    }
-
-    public static ImageIcon getIconeBomba() {
-        return iconeBomba;
-    }
-
-    public static void setIconeBomba(ImageIcon iconeBomba) {
-        TabuleiroGUI.iconeBomba = iconeBomba;
-    }
-
-    public static int getCliques() {
-        return cliques;
-    }
-
-    public static void setCliques(int cliques) {
-        TabuleiroGUI.cliques = cliques;
-    }
 
     //Subclasses --------------------------------------------------------------------------------------------------------
     private static class ListenerJogo implements MouseListener {
@@ -131,6 +69,7 @@ public class TabuleiroGUI extends JPanel {
                 if (conteudo == -1) {
                     abrirBombas();
                     cronometro.stop();
+                    encerrar();
                     //mensagem de perda
                     //retorna à tela inicial
                 } else if (conteudo == 0)
@@ -262,5 +201,13 @@ public class TabuleiroGUI extends JPanel {
             }
         });
         cronometro.start();
+    }
+
+    private static void encerrar(){
+
+        calcularPontos();
+    }
+
+    private static void calcularPontos() {
     }
 }

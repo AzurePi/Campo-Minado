@@ -15,7 +15,7 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
     public TelaInicialGUI() {
         JPanel painelTitulo = new JPanel();
 
-        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
+        ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
         JLabel titulo = new JLabel("Campo Minado", iconeBomba, SwingConstants.CENTER);
         painelTitulo.add(titulo);
 

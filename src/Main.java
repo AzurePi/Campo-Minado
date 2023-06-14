@@ -21,7 +21,7 @@ public class Main {
     private static void createAndShowGUI() {
         JFrame f = new JFrame("Campo Minado");
 
-        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
+        ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
         f.setIconImage(iconeBomba.getImage());
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
