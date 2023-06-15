@@ -1,4 +1,4 @@
-package campoMinado;
+package src.campoMinado;
 
 public class Vazio extends Conteudo {
 

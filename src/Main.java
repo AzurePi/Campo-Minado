@@ -1,9 +1,10 @@
+package src;
 /*
 Bomb by icon 54 from <a href="https://thenounproject.com/browse/icons/term/bomb/" target="_blank" title="Bomb Icons">Noun Project</a>
 Flag by Elliott Counts from <a href="https://thenounproject.com/browse/icons/term/flag/" target="_blank" title="Flag Icons">Noun Project</a>
 */
 
-import GUI.MainPanel;
+import src.GUI.MainPanel;
 
 import javax.swing.*;
 
@@ -22,7 +23,7 @@ public class Main {
     private static void createAndShowGUI() {
         JFrame f = new JFrame("Campo Minado");
 
-        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
+        ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
         f.setIconImage(iconeBomba.getImage());
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,4 +1,4 @@
-package campoMinado;
+package src.campoMinado;
 
 import java.util.ArrayList;
 import java.util.Random;

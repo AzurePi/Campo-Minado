@@ -1,12 +1,19 @@
-package GUI;
+package src.GUI;
 
 import javax.swing.*;
 
 public class NossoBotao extends JButton {
-    private boolean foiClickado = false;
-
+    private boolean foiClickado;
     private int i , j;
 
+    //Construtor -------------------------------------------------------------------------------------------------------
+    public NossoBotao(int i, int j) {
+        foiClickado = false;
+        this.i = i;
+        this.j = j;
+    }
+
+    //Setters & Getters ------------------------------------------------------------------------------------------------
     public int getI() {
         return i;
     }
@@ -20,11 +27,6 @@ public class NossoBotao extends JButton {
     }
 
     public void setJ(int j) {
-        this.j = j;
-    }
-
-    public NossoBotao(int i, int j) {
-        this.i = i;
         this.j = j;
     }
 

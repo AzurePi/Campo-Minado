@@ -1,4 +1,4 @@
-package GUI;
+package src.GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,10 +11,11 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
     JButton botaoJogar;
     JButton botaoRecordes;
 
+    //Construtor -------------------------------------------------------------------------------------------------------
     public TelaInicialGUI() {
         JPanel painelTitulo = new JPanel();
 
-        ImageIcon iconeBomba = new ImageIcon("GUI/assets/noun-bomb-238911.png");
+        ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
         JLabel titulo = new JLabel("Campo Minado", iconeBomba, SwingConstants.CENTER);
         painelTitulo.add(titulo);
 
@@ -51,6 +52,7 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
         this.setVisible(true);
     }
 
+    //Métodos ----------------------------------------------------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
