@@ -99,4 +99,13 @@ public class Tabuleiro {
     public static boolean coordenadaValida(int i, int j, int tamanho) {
         return (i >= 0 && i < tamanho && j >= 0 && j < tamanho);
     }
+
+    public void imprimir() {
+        for (int i = 0; i < tamanho; i++) {
+            for (int j = 0; j < tamanho; j++){
+                System.out.printf(board.get(i).get(j).getConteudo().revelar() + " ");
+            }
+            System.out.printf("\n");
+        }
+    }
 }

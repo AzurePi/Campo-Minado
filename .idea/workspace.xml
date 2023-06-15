@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="begin">
-      <change afterPath="$PROJECT_DIR$/GUI/NossoBotao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Campo-Minado.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campo-Minado.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/ListenerJogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Bomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Bomba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Numerado.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Numerado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
