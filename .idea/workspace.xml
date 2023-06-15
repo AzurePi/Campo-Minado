@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="begin">
-      <change afterPath="$PROJECT_DIR$/GUI/NossoBotao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Campo-Minado.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campo-Minado.iml" afterDir="false" />
+    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="Trabalhamos na GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Bomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Bomba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/campoMinado/Numerado.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Numerado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/campoMinado/Tabuleiro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685040979534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Trabalhamos na GUI">
+      <created>1686530668709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686530668709</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="begin" />
+    <MESSAGE value="Trabalhamos na GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trabalhamos na GUI" />
   </component>
 </project>

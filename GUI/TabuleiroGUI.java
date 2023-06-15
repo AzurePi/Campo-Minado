@@ -21,6 +21,15 @@ public class TabuleiroGUI extends JPanel {
     private static ImageIcon iconeBomba;
     private static int cliques = 0;
 
+    public static void imprime () {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                System.out.printf("%d   ", t.getBoard().get(i).get(j).getConteudo().revelar());
+            }
+            System.out.println();
+        }
+    }
+
     public TabuleiroGUI(){
         URL bandeiraURL = getClass().getResource("GUI/assets/noun-flag-5786229.png");
         URL bombaURL = getClass().getResource("GUI/assets/noun-bomb-238911.png");
@@ -151,7 +160,6 @@ public class TabuleiroGUI extends JPanel {
         for (int i = 0; i < tamanho / 2; i++)
             this.add(new JLabel()); //preenche com fillers
 
-
         botoes = new NossoBotao[tamanho][tamanho];
         ListenerJogo listener = new ListenerJogo();
 
@@ -178,6 +186,7 @@ public class TabuleiroGUI extends JPanel {
                 this.add(botao);
             }
         }
+        imprime();
     }
 
     private static void iniciarCronometro() {

@@ -59,7 +59,7 @@ public class Tabuleiro {
 
         switch (tamanho) {
             case 5 -> bombas = 7;
-            case 7 -> bombas = 20;
+            case 7 -> bombas = 15;
             case 11 -> bombas = 45;
             default -> bombas = 0;
         }
@@ -76,7 +76,7 @@ public class Tabuleiro {
                 //Note que se não for do tipo bomba, o boleano retornado é falso
             } while (sorteado);
 
-            board.get(linha).add(coluna, new Quadrado<>(new Bomba()));
+            board.get(linha).set(coluna, new Quadrado<>(new Bomba()));
             preencheDicas(linha, coluna);
         }
     }
@@ -84,11 +84,11 @@ public class Tabuleiro {
     public void preencheDicas(int linha, int coluna) {
         for (int i = linha - 1; i <= linha + 1; i++) {
             for (int j = coluna - 1; j <= coluna + 1; j++) {
-                if (coordenadaValida(i, j, tamanho) && (i != linha && j != coluna)) {
+                if (coordenadaValida(i, j, tamanho)) {
                     Conteudo aux = board.get(i).get(j).getConteudo();
 
                     if (aux instanceof Vazio)
-                        board.get(i).add(j, new Quadrado<>(new Numerado(1)));
+                        board.get(i).set(j, new Quadrado<>(new Numerado(1)));
                     else if (aux instanceof Numerado)
                         ((Numerado) aux).setDica(((Numerado) aux).getDica() + 1);
                 }
