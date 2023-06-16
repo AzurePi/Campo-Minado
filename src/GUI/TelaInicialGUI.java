@@ -59,7 +59,7 @@ public class TelaInicialGUI extends JPanel implements ActionListener {
 
         MainPanel parent = (MainPanel) this.getParent().getParent();
         CardLayout layout = parent.getLayout();
-        JPanel telas = parent.getTelas();
+        JPanel telas = parent.getTELAS();
 
         if (source == botaoJogar) {
             if (facil.isSelected())

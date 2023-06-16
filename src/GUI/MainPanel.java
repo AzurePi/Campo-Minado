@@ -11,13 +11,13 @@ public class MainPanel extends JPanel {
     private final String MENUINICIAL;
     private final String TABULEIRO;
     private final String PLACAR;
-    private final CardLayout layout; //https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html
-    private final JPanel telas;
+    private final CardLayout LAYOUT; //https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html
+    private final JPanel TELAS;
 
     //Construtor -------------------------------------------------------------------------------------------------------
     public MainPanel() {
-        layout = new CardLayout();
-        telas = new JPanel(layout);
+        LAYOUT = new CardLayout();
+        TELAS = new JPanel(LAYOUT);
 
         menuInicial = new TelaInicialGUI();
         tabuleiro = new TabuleiroGUI();
@@ -29,16 +29,16 @@ public class MainPanel extends JPanel {
 
         MENUINICIAL = "JPanel do menu inicial";
         TABULEIRO = "JPanel com o tabuleiro do jogo";
-        PLACAR = "JPanel com o src.placar";
+        PLACAR = "JPanel com o placar";
 
-        telas.add(menuInicial, MENUINICIAL);
-        telas.add(tabuleiro, TABULEIRO);
-        telas.add(placar, PLACAR);
-        telas.setVisible(true);
+        TELAS.add(menuInicial, MENUINICIAL);
+        TELAS.add(tabuleiro, TABULEIRO);
+        TELAS.add(placar, PLACAR);
+        TELAS.setVisible(true);
 
         this.setVisible(true);
-        this.add(telas);
-        layout.show(telas, MENUINICIAL);
+        this.add(TELAS);
+        LAYOUT.show(TELAS, MENUINICIAL);
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
@@ -68,11 +68,11 @@ public class MainPanel extends JPanel {
 
     @Override
     public CardLayout getLayout() {
-        return layout;
+        return LAYOUT;
     }
 
-    public JPanel getTelas() {
-        return telas;
+    public JPanel getTELAS() {
+        return TELAS;
     }
 
     public String getMENUINICIAL() {

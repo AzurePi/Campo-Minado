@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Tabuleiro {
-    //Atributos  -------------------------------------------------------------------------------------------------------
     private int tamanho;
     private int nBombas;
     private ArrayList<ArrayList<Quadrado<?>>> board;
@@ -15,7 +14,7 @@ public class Tabuleiro {
 
         board = new ArrayList<>();
 
-        //Relaciona cada elemento do array "linha" com outro array "Coluna"
+        //Relaciona cada elemento ("linha") do array com outro array ("coluna")
         for (int i = 0; i < tamanho; i++)
             board.add(new ArrayList<>());
 
@@ -61,7 +60,6 @@ public class Tabuleiro {
     }
 
     public void sorteiaMinas() {
-
         boolean sorteado;
         int linha, coluna;
         Random random = new Random();
@@ -111,9 +109,8 @@ public class Tabuleiro {
 
     public void imprimir() {
         for (int i = 0; i < tamanho; i++) {
-            for (int j = 0; j < tamanho; j++){
+            for (int j = 0; j < tamanho; j++)
                 System.out.printf(board.get(i).get(j).getConteudo().revelar() + " ");
-            }
             System.out.printf("\n");
         }
     }

@@ -1,7 +1,6 @@
 package src.campoMinado;
 
 public class Vazio extends Conteudo {
-
     //Métodos ----------------------------------------------------------------------------------------------------------
     @Override
     public int revelar() {

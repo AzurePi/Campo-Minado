@@ -1,7 +1,5 @@
 package src.placar;
 
-import exceptions.InvalidNameException;
-
 import java.util.ArrayList;
 
 public class Placar <P extends Pontuacao> {
@@ -29,8 +27,6 @@ public class Placar <P extends Pontuacao> {
     }
 
     //Métodos ----------------------------------------------------------------------------------------------------------
-
-
     public void printToFile() {
         /*
         TODO: aprender a usar arquivos
