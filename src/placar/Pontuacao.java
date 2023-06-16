@@ -6,13 +6,13 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Pontuacao implements Comparable<Pontuacao>, Serializable {
+public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
     private String nome;
-    private float pontos;
+    private int pontos;
     private static final Set<Character> caracteresInvalidos = new HashSet<>();
 
     //Construtor -------------------------------------------------------------------------------------------------------
-    public Pontuacao(String nome, float pontos) throws InvalidNameException {
+    public Pontuacao(String nome, int pontos) throws InvalidNameException {
         if (caracteresInvalidos.isEmpty())
             setCaracteresInvalidos();
 
@@ -32,19 +32,19 @@ public class Pontuacao implements Comparable<Pontuacao>, Serializable {
         this.nome = nome;
     }
 
-    public float getPontos() {
+    public int getPontos() {
         return pontos;
     }
 
-    public void setPontos(float pontos) {
+    public void setPontos(int pontos) {
         this.pontos = pontos;
     }
 
     //Métodos ----------------------------------------------------------------------------------------------------------
     @Override
     public int compareTo(Pontuacao o) {
-        Float esse = this.pontos;
-        Float aquele = o.getPontos();
+        Integer esse = this.pontos;
+        Integer aquele = o.getPontos();
         return esse.compareTo(aquele);
     }
 

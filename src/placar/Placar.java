@@ -4,8 +4,8 @@ import exceptions.InvalidNameException;
 
 import java.util.ArrayList;
 
-public class Placar {
-    private ArrayList<Pontuacao> pontuacoes;
+public class Placar <P extends Pontuacao> {
+    private ArrayList<P> pontuacoes;
     private int tamanho;
 
     //Construtor -------------------------------------------------------------------------------------------------------
@@ -15,11 +15,11 @@ public class Placar {
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
-    public ArrayList<Pontuacao> getPontuacoes() {
+    public ArrayList<P> getPontuacoes() {
         return pontuacoes;
     }
 
-    public void setPontuacoes(ArrayList<Pontuacao> pontuacoes) {
+    public void setPontuacoes(ArrayList<P> pontuacoes) {
         this.pontuacoes = pontuacoes;
         tamanho = pontuacoes.size();
     }
@@ -29,17 +29,7 @@ public class Placar {
     }
 
     //Métodos ----------------------------------------------------------------------------------------------------------
-    public void addPontuacao(Pontuacao pontuacao) {
-        pontuacoes.add(pontuacao);
-        pontuacoes.sort(null);
-        tamanho++;
-    }
 
-    public void addPontuacao(String nome, float pontos) throws InvalidNameException {
-        pontuacoes.add(new Pontuacao(nome, pontos));
-        pontuacoes.sort(null);
-        tamanho++;
-    }
 
     public void printToFile() {
         /*

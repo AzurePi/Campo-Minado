@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="begin">
-      <change afterPath="$PROJECT_DIR$/src/GUI/ListenerJogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/placar/PontuacaoDificil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/placar/PontuacaoFacil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/placar/PontuacaoMedio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ListenerJogo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/placar/Placar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/Placar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/placar/Pontuacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/Pontuacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

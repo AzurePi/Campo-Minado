@@ -6,6 +6,7 @@ import java.util.Random;
 public class Tabuleiro {
     //Atributos  -------------------------------------------------------------------------------------------------------
     private int tamanho;
+    private int nBombas;
     private ArrayList<ArrayList<Quadrado<?>>> board;
 
     //Construtor -------------------------------------------------------------------------------------------------------
@@ -31,6 +32,14 @@ public class Tabuleiro {
         this.tamanho = tamanho;
     }
 
+    public int getnBombas() {
+        return nBombas;
+    }
+
+    public void setnBombas(int nBombas) {
+        this.nBombas = nBombas;
+    }
+
     public ArrayList<ArrayList<Quadrado<?>>> getBoard() {
         return board;
     }
@@ -52,20 +61,20 @@ public class Tabuleiro {
     }
 
     public void sorteiaMinas() {
-        int bombas;
+
         boolean sorteado;
         int linha, coluna;
         Random random = new Random();
 
         switch (tamanho) {
-            case 5 -> bombas = 7;
-            case 7 -> bombas = 15;
-            case 11 -> bombas = 45;
-            default -> bombas = 0;
+            case 5 -> nBombas = 6;
+            case 7 -> nBombas = 15;
+            case 11 -> nBombas = 45;
+            default -> nBombas = 0;
         }
 
         //para cada bomba que deve estar no tabuleiro
-        for (int i = 0; i < bombas; i++) {
+        for (int i = 0; i < nBombas; i++) {
             //sorteamos uma coordenada
             do {
                 linha = random.nextInt(tamanho);
