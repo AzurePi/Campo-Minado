@@ -120,15 +120,15 @@
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="189" x2="281" y1="345.5137" y2="345.5137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="189" x2="281" y1="353.5137" y2="353.5137"/>
-        </g><!--class src.campoMinado.Clicavel-->
+        </g><!--class src.campoMinado.Oculto>
         <g id="elem_Clicavel">
-            <rect codeLine="33" fill="#F1F1F1" height="66.6211" id="src.campoMinado.Clicavel" rx="2.5" ry="2.5"
+            <rect codeLine="33" fill="#F1F1F1" height="66.6211" id="src.campoMinado.Oculto" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="103" x="22.5" y="157.0137"/>
             <ellipse cx="47.85" cy="173.0137" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M48.8031,169.6543 L48.8031,176.3105 L50.5219,176.3105 Q51.1313,176.3105 51.3969,176.5449 Q51.6625,176.7793 51.6625,177.1699 Q51.6625,177.5449 51.3969,177.7793 Q51.1313,178.0137 50.5219,178.0137 L45.3813,178.0137 Q44.7719,178.0137 44.5063,177.7793 Q44.2406,177.5449 44.2406,177.1543 Q44.2406,176.7793 44.5063,176.5449 Q44.7719,176.3105 45.3813,176.3105 L47.1,176.3105 L47.1,169.6543 L45.3813,169.6543 Q44.7719,169.6543 44.5063,169.4199 Q44.2406,169.1855 44.2406,168.7949 Q44.2406,168.4199 44.5063,168.1855 Q44.7719,167.9512 45.3813,167.9512 L50.5219,167.9512 Q51.1313,167.9512 51.3969,168.1855 Q51.6625,168.4199 51.6625,168.7949 Q51.6625,169.1855 51.3969,169.4199 Q51.1313,169.6543 50.5219,169.6543 L48.8031,169.6543 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
-                  textLength="48" x="64.15" y="178.8105">src.campoMinado.Clicavel
+                  textLength="48" x="64.15" y="178.8105">src.campoMinado.Oculto
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="23.5" x2="124.5" y1="189.0137" y2="189.0137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="23.5" x2="124.5" y1="197.0137" y2="197.0137"/>
@@ -227,7 +227,7 @@
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31"
                   x="450.8516" y="286.7175">25...*
             </text>
-        </g><!--reverse link src.campoMinado.Clicavel to src.campoMinado.Conteudo-->
+        </g><!--reverse link src.campoMinado.Ocultoo src.campoMinado.Conteudo-->
         <g id="link_Clicavel_Conteudo">
             <path codeLine="53" d="M114.07,227.6037 C143.75,254.3337 183.35,289.9937 209.01,313.1037 " fill="none"
                   id="src.campoMinado.Clicavel-backto-src.campoMinado.Conteudo"

@@ -1,5 +1,8 @@
 package src.campoMinado;
 
+/**
+ * Tipo de conteúdo oculto bomba.
+ */
 public class Bomba extends Conteudo {
     //Métodos ----------------------------------------------------------------------------------------------------------
     @Override

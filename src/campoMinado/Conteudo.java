@@ -1,5 +1,8 @@
 package src.campoMinado;
 
-public abstract class Conteudo implements Clicavel {
+/**
+ * Tipo abstrato de conteúdo oculto.
+ */
+public abstract class Conteudo implements Oculto {
 
 }
