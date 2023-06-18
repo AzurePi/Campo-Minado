@@ -6,20 +6,20 @@
     <g><!--cluster Campo-Minado-->
         <g id="cluster_Campo-Minado">
             <path d="M8.5,6.0137 L114.5,6.0137 A3.75,3.75 0 0 1 117,8.5137 L124,30.6348 L683.5,30.6348 A2.5,2.5 0 0 1 686,33.1348 L686,668.5137 A2.5,2.5 0 0 1 683.5,671.0137 L8.5,671.0137 A2.5,2.5 0 0 1 6,668.5137 L6,8.5137 A2.5,2.5 0 0 1 8.5,6.0137 "
-                  fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+                  fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
             <line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="124" y1="30.6348" y2="30.6348"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
                   textLength="105" x="10" y="23.1211">Campo-Minado
             </text>
-        </g><!--class src.campoMinado.Tabuleiro-->
+        </g><!--class Tabuleiro-->
         <g id="elem_Tabuleiro">
-            <rect codeLine="3" fill="#F1F1F1" height="85.2422" id="src.campoMinado.Tabuleiro" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="85.2422" id="Tabuleiro" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="275" x="394.5" y="148.0137"/>
             <ellipse cx="497.75" cy="164.0137" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M500.5156,159.8887 Q500.6719,159.6699 500.8594,159.5605 Q501.0469,159.4512 501.2656,159.4512 Q501.6406,159.4512 501.875,159.7168 Q502.1094,159.9668 502.1094,160.5762 L502.1094,162.0293 Q502.1094,162.6387 501.875,162.9043 Q501.6406,163.1699 501.2656,163.1699 Q500.9219,163.1699 500.7188,162.9668 Q500.5156,162.7793 500.4063,162.2637 Q500.3594,161.9043 500.1719,161.7168 Q499.8438,161.3418 499.2344,161.123 Q498.625,160.9043 498,160.9043 Q497.2344,160.9043 496.5938,161.2324 Q495.9688,161.5605 495.4688,162.3105 Q494.9844,163.0605 494.9844,164.0918 L494.9844,165.1855 Q494.9844,166.4199 495.875,167.248 Q496.7656,168.0605 498.3594,168.0605 Q499.2969,168.0605 499.9531,167.8105 Q500.3438,167.6543 500.7656,167.2168 Q501.0313,166.9512 501.1719,166.873 Q501.3281,166.7949 501.5313,166.7949 Q501.8594,166.7949 502.1094,167.0605 Q502.375,167.3105 502.375,167.6543 Q502.375,167.998 502.0313,168.4043 Q501.5313,168.9824 500.7344,169.3105 Q499.6563,169.7637 498.3594,169.7637 Q496.8438,169.7637 495.6406,169.1387 Q494.6563,168.6387 493.9688,167.5762 Q493.2813,166.498 493.2813,165.2168 L493.2813,164.0605 Q493.2813,162.7324 493.8906,161.5918 Q494.5156,160.4355 495.6094,159.8262 Q496.7031,159.2012 497.9375,159.2012 Q498.6719,159.2012 499.3125,159.373 Q499.9688,159.5293 500.5156,159.8887 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60"
-                  x="518.25" y="169.8105">src.campoMinado.Tabuleiro
+                  x="518.25" y="169.8105">Tabuleiro
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="395.5" x2="668.5" y1="180.0137" y2="180.0137"/>
             <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="402.5" y="191.8242"/>
@@ -28,8 +28,7 @@
             </text>
             <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="402.5" y="210.4453"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="249"
-                  x="414.5" y="217.7422">ArrayList&lt;ArrayList&lt;src.campoMinado.Quadrado&gt;&gt;
-                board
+                  x="414.5" y="217.7422">ArrayList&lt;ArrayList&lt;Quadrado&gt;&gt; board
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="395.5" x2="668.5" y1="225.2559" y2="225.2559"/>
         </g>
@@ -39,13 +38,10 @@
             <path d="M660,43.0137 L660,53.0137 L670,53.0137 L660,43.0137 " fill="#FEFFDD"
                   style="stroke:#181818;stroke-width:0.5;"/>
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="405" x="250"
-                  y="62.042">O
-                construtor de src.campoMinado.Tabuleiro constr&#243;i v&#225;rios src.campoMinado.Quadrado para compor
-                board
+                  y="62.042">O construtor de Tabuleiro constr&#243;i v&#225;rios Quadrado para compor board
             </text>
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="310" x="250"
-                  y="79.333">O
-                par&#226;metro de tipo de cada src.campoMinado.Quadrado &#233; aleatorizado
+                  y="79.333">O par&#226;metro de tipo de cada Quadrado &#233; aleatorizado
             </text>
         </g>
         <path d="M161,163.0137 L161,207.5957 A0,0 0 0 0 161,207.5957 L359,207.5957 A0,0 0 0 0 359,207.5957 L359,189.3047 L398.5,211.9453 L359,181.3047 L359,173.0137 L349,163.0137 L161,163.0137 A0,0 0 0 0 161,163.0137 "
@@ -56,21 +52,19 @@
               y="182.042">Um tabuleiro tem um n&#250;mero
         </text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="167"
-              y="199.333">quadrado
-            perfeito de src.campoMinado.Quadrado
-        </text><!--class src.campoMinado.Quadrado-->
+              y="199.333">quadrado perfeito de Quadrado
+        </text><!--class Quadrado-->
         <g id="elem_Quadrado">
-            <rect codeLine="15" fill="#F1F1F1" height="79.2031" id="src.campoMinado.Quadrado" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="79.2031" id="Quadrado" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="152" x="387" y="298.0137"/>
             <ellipse cx="402" cy="320.3047" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M404.7656,316.1797 Q404.9219,315.9609 405.1094,315.8516 Q405.2969,315.7422 405.5156,315.7422 Q405.8906,315.7422 406.125,316.0078 Q406.3594,316.2578 406.3594,316.8672 L406.3594,318.3203 Q406.3594,318.9297 406.125,319.1953 Q405.8906,319.4609 405.5156,319.4609 Q405.1719,319.4609 404.9688,319.2578 Q404.7656,319.0703 404.6563,318.5547 Q404.6094,318.1953 404.4219,318.0078 Q404.0938,317.6328 403.4844,317.4141 Q402.875,317.1953 402.25,317.1953 Q401.4844,317.1953 400.8438,317.5234 Q400.2188,317.8516 399.7188,318.6016 Q399.2344,319.3516 399.2344,320.3828 L399.2344,321.4766 Q399.2344,322.7109 400.125,323.5391 Q401.0156,324.3516 402.6094,324.3516 Q403.5469,324.3516 404.2031,324.1016 Q404.5938,323.9453 405.0156,323.5078 Q405.2813,323.2422 405.4219,323.1641 Q405.5781,323.0859 405.7813,323.0859 Q406.1094,323.0859 406.3594,323.3516 Q406.625,323.6016 406.625,323.9453 Q406.625,324.2891 406.2813,324.6953 Q405.7813,325.2734 404.9844,325.6016 Q403.9063,326.0547 402.6094,326.0547 Q401.0938,326.0547 399.8906,325.4297 Q398.9063,324.9297 398.2188,323.8672 Q397.5313,322.7891 397.5313,321.5078 L397.5313,320.3516 Q397.5313,319.0234 398.1406,317.8828 Q398.7656,316.7266 399.8594,316.1172 Q400.9531,315.4922 402.1875,315.4922 Q402.9219,315.4922 403.5625,315.6641 Q404.2188,315.8203 404.7656,316.1797 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
-                  textLength="124" x="414" y="315.9629">&#171;T
-                extends src.campoMinado.Conteudo&#187;
+                  textLength="124" x="414" y="315.9629">&#171;T extends Conteudo&#187;
             </text>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="444"
-                  y="334.082">src.campoMinado.Quadrado
+                  y="334.082">Quadrado
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="388" x2="538" y1="342.5957" y2="342.5957"/>
             <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="395" y="354.4063"/>
@@ -85,11 +79,10 @@
             <path d="M558.5,456.5137 L558.5,466.5137 L568.5,466.5137 L558.5,456.5137 " fill="#FEFFDD"
                   style="stroke:#181818;stroke-width:0.5;"/>
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180"
-                  x="373.5" y="475.542">src.campoMinado.Quadrado
-                existe para facilitar o
+                  x="373.5" y="475.542">Quadrado existe para facilitar o
             </text>
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138"
-                  x="373.5" y="492.833">desenvolvimento da src.GUI
+                  x="373.5" y="492.833">desenvolvimento da GUI
             </text>
         </g>
         <path d="M574.5,293.0137 L574.5,328.5957 L440,355.9063 L574.5,336.5957 L574.5,372.1777 A0,0 0 0 0 574.5,372.1777 L669.5,372.1777 A0,0 0 0 0 669.5,372.1777 L669.5,303.0137 L659.5,293.0137 L574.5,293.0137 A0,0 0 0 0 574.5,293.0137 "
@@ -103,32 +96,31 @@
               y="329.333">a posi&#231;&#227;o de
         </text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="580.5"
-              y="346.624">src.campoMinado.Quadrado
-            no
+              y="346.624">Quadrado no
         </text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="580.5"
-              y="363.915">src.campoMinado.Tabuleiro
-        </text><!--class src.campoMinado.Conteudo-->
+              y="363.915">Tabuleiro
+        </text><!--class Conteudo-->
         <g id="elem_Conteudo">
-            <rect codeLine="36" fill="#F1F1F1" height="48" id="src.campoMinado.Conteudo" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="48" id="Conteudo" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="94" x="188" y="313.5137"/>
             <ellipse cx="203" cy="329.5137" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M205.1875,331.2793 L201.0469,331.2793 L200.625,332.3105 L201.0469,332.3105 Q201.6563,332.3105 201.9219,332.5449 Q202.1875,332.7793 202.1875,333.1699 Q202.1875,333.5449 201.9219,333.7793 Q201.6563,334.0137 201.0469,334.0137 L198.75,334.0137 Q198.1406,334.0137 197.8906,333.7793 Q197.625,333.5449 197.625,333.1543 Q197.625,332.7793 197.9063,332.5449 Q198.1719,332.2949 198.7969,332.3105 L201.4688,325.6543 L200.3594,325.6543 Q199.75,325.6543 199.4844,325.4199 Q199.2188,325.1855 199.2188,324.7949 Q199.2188,324.4199 199.4844,324.1855 Q199.75,323.9512 200.3594,323.9512 L204.0313,323.9512 L207.4219,332.3105 Q208.0156,332.3105 208.2031,332.4512 Q208.5938,332.7168 208.5938,333.1699 Q208.5938,333.5449 208.3281,333.7793 Q208.0781,334.0137 207.4688,334.0137 L205.1719,334.0137 Q204.5625,334.0137 204.2969,333.7793 Q204.0313,333.5449 204.0313,333.1543 Q204.0313,332.7793 204.2969,332.5449 Q204.5625,332.3105 205.1719,332.3105 L205.5938,332.3105 L205.1875,331.2793 Z M204.4688,329.5762 L203.1094,326.2012 L201.7344,329.5762 L204.4688,329.5762 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
-                  textLength="62" x="217" y="335.3105">src.campoMinado.Conteudo
+                  textLength="62" x="217" y="335.3105">Conteudo
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="189" x2="281" y1="345.5137" y2="345.5137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="189" x2="281" y1="353.5137" y2="353.5137"/>
-        </g><!--class src.campoMinado.Oculto>
+        </g><!--class Clicavel-->
         <g id="elem_Clicavel">
-            <rect codeLine="33" fill="#F1F1F1" height="66.6211" id="src.campoMinado.Oculto" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="66.6211" id="Clicavel" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="103" x="22.5" y="157.0137"/>
             <ellipse cx="47.85" cy="173.0137" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M48.8031,169.6543 L48.8031,176.3105 L50.5219,176.3105 Q51.1313,176.3105 51.3969,176.5449 Q51.6625,176.7793 51.6625,177.1699 Q51.6625,177.5449 51.3969,177.7793 Q51.1313,178.0137 50.5219,178.0137 L45.3813,178.0137 Q44.7719,178.0137 44.5063,177.7793 Q44.2406,177.5449 44.2406,177.1543 Q44.2406,176.7793 44.5063,176.5449 Q44.7719,176.3105 45.3813,176.3105 L47.1,176.3105 L47.1,169.6543 L45.3813,169.6543 Q44.7719,169.6543 44.5063,169.4199 Q44.2406,169.1855 44.2406,168.7949 Q44.2406,168.4199 44.5063,168.1855 Q44.7719,167.9512 45.3813,167.9512 L50.5219,167.9512 Q51.1313,167.9512 51.3969,168.1855 Q51.6625,168.4199 51.6625,168.7949 Q51.6625,169.1855 51.3969,169.4199 Q51.1313,169.6543 50.5219,169.6543 L48.8031,169.6543 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
-                  textLength="48" x="64.15" y="178.8105">src.campoMinado.Oculto
+                  textLength="48" x="64.15" y="178.8105">Clicavel
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="23.5" x2="124.5" y1="189.0137" y2="189.0137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="23.5" x2="124.5" y1="197.0137" y2="197.0137"/>
@@ -136,15 +128,15 @@
             <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
                   textLength="77" x="42.5" y="216.1211">int Revelar()
             </text>
-        </g><!--class src.campoMinado.Vazio-->
+        </g><!--class Vazio-->
         <g id="elem_Vazio">
-            <rect codeLine="37" fill="#F1F1F1" height="66.6211" id="src.campoMinado.Vazio" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="66.6211" id="Vazio" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="104" x="348" y="582.5137"/>
             <ellipse cx="380.1" cy="598.5137" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M382.8656,594.3887 Q383.0219,594.1699 383.2094,594.0605 Q383.3969,593.9512 383.6156,593.9512 Q383.9906,593.9512 384.225,594.2168 Q384.4594,594.4668 384.4594,595.0762 L384.4594,596.5293 Q384.4594,597.1387 384.225,597.4043 Q383.9906,597.6699 383.6156,597.6699 Q383.2719,597.6699 383.0688,597.4668 Q382.8656,597.2793 382.7563,596.7637 Q382.7094,596.4043 382.5219,596.2168 Q382.1938,595.8418 381.5844,595.623 Q380.975,595.4043 380.35,595.4043 Q379.5844,595.4043 378.9438,595.7324 Q378.3188,596.0605 377.8188,596.8105 Q377.3344,597.5605 377.3344,598.5918 L377.3344,599.6855 Q377.3344,600.9199 378.225,601.748 Q379.1156,602.5605 380.7094,602.5605 Q381.6469,602.5605 382.3031,602.3105 Q382.6938,602.1543 383.1156,601.7168 Q383.3813,601.4512 383.5219,601.373 Q383.6781,601.2949 383.8813,601.2949 Q384.2094,601.2949 384.4594,601.5605 Q384.725,601.8105 384.725,602.1543 Q384.725,602.498 384.3813,602.9043 Q383.8813,603.4824 383.0844,603.8105 Q382.0063,604.2637 380.7094,604.2637 Q379.1938,604.2637 377.9906,603.6387 Q377.0063,603.1387 376.3188,602.0762 Q375.6313,600.998 375.6313,599.7168 L375.6313,598.5605 Q375.6313,597.2324 376.2406,596.0918 Q376.8656,594.9355 377.9594,594.3262 Q379.0531,593.7012 380.2875,593.7012 Q381.0219,593.7012 381.6625,593.873 Q382.3188,594.0293 382.8656,594.3887 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34"
-                  x="397.9" y="604.3105">src.campoMinado.Vazio
+                  x="397.9" y="604.3105">Vazio
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="349" x2="451" y1="614.5137" y2="614.5137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="349" x2="451" y1="622.5137" y2="622.5137"/>
@@ -152,15 +144,15 @@
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="368"
                   y="641.6211">int Revelar()
             </text>
-        </g><!--class src.campoMinado.Numerado-->
+        </g><!--class Numerado-->
         <g id="elem_Numerado">
-            <rect codeLine="40" fill="#F1F1F1" height="66.6211" id="src.campoMinado.Numerado" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="66.6211" id="Numerado" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="104" x="30" y="582.5137"/>
             <ellipse cx="48.15" cy="598.5137" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M50.9156,594.3887 Q51.0719,594.1699 51.2594,594.0605 Q51.4469,593.9512 51.6656,593.9512 Q52.0406,593.9512 52.275,594.2168 Q52.5094,594.4668 52.5094,595.0762 L52.5094,596.5293 Q52.5094,597.1387 52.275,597.4043 Q52.0406,597.6699 51.6656,597.6699 Q51.3219,597.6699 51.1188,597.4668 Q50.9156,597.2793 50.8063,596.7637 Q50.7594,596.4043 50.5719,596.2168 Q50.2438,595.8418 49.6344,595.623 Q49.025,595.4043 48.4,595.4043 Q47.6344,595.4043 46.9938,595.7324 Q46.3688,596.0605 45.8688,596.8105 Q45.3844,597.5605 45.3844,598.5918 L45.3844,599.6855 Q45.3844,600.9199 46.275,601.748 Q47.1656,602.5605 48.7594,602.5605 Q49.6969,602.5605 50.3531,602.3105 Q50.7438,602.1543 51.1656,601.7168 Q51.4313,601.4512 51.5719,601.373 Q51.7281,601.2949 51.9313,601.2949 Q52.2594,601.2949 52.5094,601.5605 Q52.775,601.8105 52.775,602.1543 Q52.775,602.498 52.4313,602.9043 Q51.9313,603.4824 51.1344,603.8105 Q50.0563,604.2637 48.7594,604.2637 Q47.2438,604.2637 46.0406,603.6387 Q45.0563,603.1387 44.3688,602.0762 Q43.6813,600.998 43.6813,599.7168 L43.6813,598.5605 Q43.6813,597.2324 44.2906,596.0918 Q44.9156,594.9355 46.0094,594.3262 Q47.1031,593.7012 48.3375,593.7012 Q49.0719,593.7012 49.7125,593.873 Q50.3688,594.0293 50.9156,594.3887 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65"
-                  x="62.85" y="604.3105">src.campoMinado.Numerado
+                  x="62.85" y="604.3105">Numerado
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="31" x2="133" y1="614.5137" y2="614.5137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="31" x2="133" y1="622.5137" y2="622.5137"/>
@@ -168,15 +160,15 @@
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="50"
                   y="641.6211">int Revelar()
             </text>
-        </g><!--class src.campoMinado.Bomba-->
+        </g><!--class Bomba-->
         <g id="elem_Bomba">
-            <rect codeLine="43" fill="#F1F1F1" height="66.6211" id="src.campoMinado.Bomba" rx="2.5" ry="2.5"
+            <rect fill="#F1F1F1" height="66.6211" id="Bomba" rx="2.5" ry="2.5"
                   style="stroke:#181818;stroke-width:0.5;" width="104" x="183" y="446.0137"/>
             <ellipse cx="210.6" cy="462.0137" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M213.3656,457.8887 Q213.5219,457.6699 213.7094,457.5605 Q213.8969,457.4512 214.1156,457.4512 Q214.4906,457.4512 214.725,457.7168 Q214.9594,457.9668 214.9594,458.5762 L214.9594,460.0293 Q214.9594,460.6387 214.725,460.9043 Q214.4906,461.1699 214.1156,461.1699 Q213.7719,461.1699 213.5688,460.9668 Q213.3656,460.7793 213.2563,460.2637 Q213.2094,459.9043 213.0219,459.7168 Q212.6938,459.3418 212.0844,459.123 Q211.475,458.9043 210.85,458.9043 Q210.0844,458.9043 209.4438,459.2324 Q208.8188,459.5605 208.3188,460.3105 Q207.8344,461.0605 207.8344,462.0918 L207.8344,463.1855 Q207.8344,464.4199 208.725,465.248 Q209.6156,466.0605 211.2094,466.0605 Q212.1469,466.0605 212.8031,465.8105 Q213.1938,465.6543 213.6156,465.2168 Q213.8813,464.9512 214.0219,464.873 Q214.1781,464.7949 214.3813,464.7949 Q214.7094,464.7949 214.9594,465.0605 Q215.225,465.3105 215.225,465.6543 Q215.225,465.998 214.8813,466.4043 Q214.3813,466.9824 213.5844,467.3105 Q212.5063,467.7637 211.2094,467.7637 Q209.6938,467.7637 208.4906,467.1387 Q207.5063,466.6387 206.8188,465.5762 Q206.1313,464.498 206.1313,463.2168 L206.1313,462.0605 Q206.1313,460.7324 206.7406,459.5918 Q207.3656,458.4355 208.4594,457.8262 Q209.5531,457.2012 210.7875,457.2012 Q211.5219,457.2012 212.1625,457.373 Q212.8188,457.5293 213.3656,457.8887 Z "
                   fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44"
-                  x="227.4" y="467.8105">src.campoMinado.Bomba
+                  x="227.4" y="467.8105">Bomba
             </text>
             <line style="stroke:#181818;stroke-width:0.5;" x1="184" x2="286" y1="478.0137" y2="478.0137"/>
             <line style="stroke:#181818;stroke-width:0.5;" x1="184" x2="286" y1="486.0137" y2="486.0137"/>
@@ -200,13 +192,12 @@
                   x="183.5" y="629.624">identifica o tipo
             </text>
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="73"
-                  x="183.5" y="646.915">de
-                src.campoMinado.Conteudo
+                  x="183.5" y="646.915">de Conteudo
             </text>
-        </g><!--link src.campoMinado.Conteudo to src.campoMinado.Quadrado-->
+        </g><!--link Conteudo to Quadrado-->
         <g id="link_Conteudo_Quadrado">
-            <path codeLine="29" d="M282.2,337.5137 C312.69,337.5137 343.17,337.5137 373.66,337.5137 " fill="none"
-                  id="src.campoMinado.Conteudo-to-src.campoMinado.Quadrado" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M282.2,337.5137 C312.69,337.5137 343.17,337.5137 373.66,337.5137 " fill="none"
+                  id="Conteudo-to-Quadrado" style="stroke:#181818;stroke-width:1.0;"/>
             <polygon fill="#181818"
                      points="386.73,337.5137,380.73,333.5137,374.73,337.5137,380.73,341.5137,386.73,337.5137"
                      style="stroke:#181818;stroke-width:1.0;"/>
@@ -216,61 +207,57 @@
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7"
                   x="371.8776" y="333.7096">1
             </text>
-        </g><!--reverse link src.campoMinado.Tabuleiro to src.campoMinado.Quadrado-->
+        </g><!--reverse link Tabuleiro to Quadrado-->
         <g id="link_Tabuleiro_Quadrado">
-            <path codeLine="30" d="M506.59,244.9237 C498.22,262.4937 489.09,281.6837 481.36,297.9437 " fill="none"
-                  id="src.campoMinado.Tabuleiro-backto-src.campoMinado.Quadrado"
-                  style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M506.59,244.9237 C498.22,262.4937 489.09,281.6837 481.36,297.9437 " fill="none"
+                  id="Tabuleiro-backto-Quadrado" style="stroke:#181818;stroke-width:1.0;"/>
             <polygon fill="#181818"
                      points="512.23,233.0637,506.0405,236.7637,507.0754,243.9002,513.2649,240.2001,512.23,233.0637"
                      style="stroke:#181818;stroke-width:1.0;"/>
             <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31"
                   x="450.8516" y="286.7175">25...*
             </text>
-        </g><!--reverse link src.campoMinado.Ocultoo src.campoMinado.Conteudo-->
+        </g><!--reverse link Clicavel to Conteudo-->
         <g id="link_Clicavel_Conteudo">
-            <path codeLine="53" d="M114.07,227.6037 C143.75,254.3337 183.35,289.9937 209.01,313.1037 " fill="none"
-                  id="src.campoMinado.Clicavel-backto-src.campoMinado.Conteudo"
-                  style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <path d="M114.07,227.6037 C143.75,254.3337 183.35,289.9937 209.01,313.1037 " fill="none"
+                  id="Clicavel-backto-Conteudo" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
             <polygon fill="#181818"
                      points="110.13,224.0537,114.1438,233.0475,113.8465,227.3985,119.4955,227.1012,110.13,224.0537"
                      style="stroke:#181818;stroke-width:1.0;"/>
-        </g><!--reverse link src.campoMinado.Conteudo to src.campoMinado.Vazio-->
+        </g><!--reverse link Conteudo to Vazio-->
         <g id="link_Conteudo_Vazio">
-            <path codeLine="54"
-                  d="M267.06,377.5137 C281.89,396.4137 299.23,419.7937 313,442.0137 C332.37,473.2737 333.46,483.1737 350,516.0137 C360.35,536.5637 371.99,559.4937 381.43,578.0537 "
-                  fill="none" id="src.campoMinado.Conteudo-backto-src.campoMinado.Vazio"
-                  style="stroke:#181818;stroke-width:1.0;"/>
+            <path
+                    d="M267.06,377.5137 C281.89,396.4137 299.23,419.7937 313,442.0137 C332.37,473.2737 333.46,483.1737 350,516.0137 C360.35,536.5637 371.99,559.4937 381.43,578.0537 "
+                    fill="none" id="Conteudo-backto-Vazio" style="stroke:#181818;stroke-width:1.0;"/>
             <polygon fill="none" points="261.59,381.8837,254.57,361.8937,272.52,373.1437,261.59,381.8837"
                      style="stroke:#181818;stroke-width:1.0;"/>
-        </g><!--reverse link src.campoMinado.Conteudo to src.campoMinado.Numerado-->
+        </g><!--reverse link Conteudo to Numerado-->
         <g id="link_Conteudo_Numerado">
-            <path codeLine="55"
-                  d="M202.41,377.1937 C187.46,396.0237 170.17,419.4337 157,442.0137 C130.84,486.8637 108.25,542.5437 94.88,578.3037 "
-                  fill="none" id="src.campoMinado.Conteudo-backto-src.campoMinado.Numerado"
-                  style="stroke:#181818;stroke-width:1.0;"/>
+            <path
+                    d="M202.41,377.1937 C187.46,396.0237 170.17,419.4337 157,442.0137 C130.84,486.8637 108.25,542.5437 94.88,578.3037 "
+                    fill="none" id="Conteudo-backto-Numerado" style="stroke:#181818;stroke-width:1.0;"/>
             <polygon fill="none" points="196.99,372.7637,215.04,361.6537,207.85,381.5937,196.99,372.7637"
                      style="stroke:#181818;stroke-width:1.0;"/>
-        </g><!--reverse link src.campoMinado.Conteudo to src.campoMinado.Bomba-->
+        </g><!--reverse link Conteudo to Bomba-->
         <g id="link_Conteudo_Bomba">
-            <path codeLine="56" d="M235,381.5937 C235,400.9037 235,423.4137 235,441.8337 " fill="none"
-                  id="src.campoMinado.Conteudo-backto-src.campoMinado.Bomba" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M235,381.5937 C235,400.9037 235,423.4137 235,441.8337 " fill="none"
+                  id="Conteudo-backto-Bomba" style="stroke:#181818;stroke-width:1.0;"/>
             <polygon fill="none" points="228,381.5537,235,361.5537,242,381.5537,228,381.5537"
                      style="stroke:#181818;stroke-width:1.0;"/>
-        </g><!--link N1 to src.campoMinado.Vazio-->
+        </g><!--link N1 to Vazio-->
         <g id="link_N1_Vazio">
-            <path codeLine="57" d="M304.65,631.4137 C315.15,633.2337 326.12,634.6537 336.83,635.2337 " fill="none"
-                  id="N1-src.campoMinado.Vazio" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <path d="M304.65,631.4137 C315.15,633.2337 326.12,634.6537 336.83,635.2337 " fill="none"
+                  id="N1-Vazio" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
             <line style="stroke:#181818;stroke-width:1.0;" x1="336.83" x2="347" y1="635.2337" y2="635.5137"/>
-        </g><!--link src.campoMinado.Numerado to N1-->
+        </g><!--link Numerado to N1-->
         <g id="link_Numerado_N1">
-            <path codeLine="58" d="M135,635.5137 C146.63,639.6737 158.85,641.6137 170.68,641.9337 " fill="none"
-                  id="src.campoMinado.Numerado-N1" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <line style="stroke:#181818;stroke-width:1.0;" x1="170.68" x2="180.96" y1="641.9337" y2="641.8037"/>
-        </g><!--link src.campoMinado.Bomba to N1-->
+            <path d="M135,635.5137 C145.48,639.2637 156.44,641.2137 167.16,641.7937 " fill="none"
+                  id="Numerado-N1" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <line style="stroke:#181818;stroke-width:1.0;" x1="167.16" x2="177.35" y1="641.7937" y2="641.9437"/>
+        </g><!--link Bomba to N1-->
         <g id="link_Bomba_N1">
-            <path codeLine="59" d="M288,499.0137 C321.88,499.0137 296.77,542.1737 272.14,575.7337 " fill="none"
-                  id="src.campoMinado.Bomba-N1" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-        </g><!--SRC=[ZLDDRzGm4BtlhnZj2GeRgKXSebKbw04XyI5GotsIpBPJOZiupbAwx8yf753FtBZcZp7nhksa7r9ps4qyps-UtnitM7x5Cu9ZL8rPl6UDbTdCG9wonhQ54oowcjZk5uTd0QmTE5IepyrezPMr-ECTjswPtZvrM5cXF3g2mg2jF7phVxLn1CuqO5QfIwJx2ANHhRETCnOgIeZzUl-NOTrVMpOjX2RGe4MfoqdigDsEJchzBqLE68JESUF_IwmmxUzl06j2QSbNykrtawwyrAIvffMRYCxpQRDJ9Uu4kOuKT0fq_q_Hw7pVecQoAsBdrGGXTnllmeX2byiJe4ida1QEZNRK3HRVZeYVmyLjmmlZd563_4cpuOdiT2dHqSxD5PPSiqCB2LXHItfjwZKhqeDoX3UdRnzmo_BPkHltotEEJ0m45wAruX9LN4LeJClzd_xtuCfTVJf9cGvEx3wRuEU7SpXO3B4j_7jmR3PX48YKNxpCiknWdjpPSOcTaXEMSb5gqRgcEfdz33POo4XYwRRUzyyaTRHFdexC3uXzaa72PZkAzmjUiHdpFaIsWt_ePABYTNtCZjT65VWOk4yEfSLX14UOH39aJxQ_ZiKqu3BOAJ6kP3vu9OQ1yLTkD4BJ5AR91OzXcMLJNFY0vKz9onjsptfmvfwIjy2l-yrvlZyNPCDyPE74WM5KzuCS0PvdLAtCT-sBi-tiFm00]-->
+            <path d="M288,499.0137 C321.88,499.0137 296.77,542.1737 272.14,575.7337 " fill="none"
+                  id="Bomba-N1" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g><!--SRC=[ZLDDRzGm4BtdLuoM2nGsKf6uHAjAKAqG4Xy2jTmdoQHrYUtWE4lfiZ-cS42SkN7D7sFYhEsa7r9zs4qyps-UtviqM7p1Cu9Zb8rUlXCAImsFrklrDW5UHOrj2oUOTpK9eyVDOIr1A0iM9QfpFTbzQGn-VojQkufF7pii3VCU7K6kqPGEldE_Ibi2gnlGLUmIw3v0eLLhJMUrWP8YOh_V_nMmwQ-Dq2tu9j2WGQxpTSoatKZ7jVwd9CiCJ6T5u_uBB36Ux_y0reJSKbpnkpjDgdHIe-QQAZiJdMNpPgUItV5oBKde9AZ-dwJ9_Ru6pMGg4jQfyK9kDnx3249NgnEWIykG5ewrijGD5j-CI3o3Yvk6vzfQBGVvisR32knqoT7Hw6Q5XQY5HGCHM59BQgFhZP2a1kK8hq_VtEEM4MVdTjeloqHW4a1mmLfBKQ0CkmYDRaN_k_yrk79RdufIveCJkYSp_E9m0GVB8RQbU_QE9JC6Xd3v-OiqJGyMqPsHY-tadB3WhwLchHkgezbFOOivZoGMTkTy_qHSH_FuoSHyZzWdwILiTvDuF-ELq5FU-yX6-FkE9uebFlp4AorpV0ZS9OVSuZ200umZ6R8dqr-7OXnm7koOc2XvFaJ5Xe5sdznaXEOfp9Fp7iCgJUSu_mAh7voMC-oEVU_C7ILdWTjtXxDiVoz8X_b8_OqzmwJk1Za07C-aMkfloXMJNV8V]-->
     </g>
 </svg>

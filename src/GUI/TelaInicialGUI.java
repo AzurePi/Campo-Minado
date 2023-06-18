@@ -6,10 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TelaInicialGUI extends JPanel implements ActionListener {
-    ButtonGroup dificuldades;
-    JRadioButton facil, medio, dificil;
-    JButton botaoJogar;
-    JButton botaoRecordes;
+    final ButtonGroup dificuldades;
+    final JRadioButton facil;
+    final JRadioButton medio;
+    final JRadioButton dificil;
+    final JButton botaoJogar;
+    final JButton botaoRecordes;
 
     //Construtor -------------------------------------------------------------------------------------------------------
     public TelaInicialGUI() {

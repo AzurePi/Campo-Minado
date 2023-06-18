@@ -9,7 +9,7 @@ import java.util.Random;
 public class Tabuleiro {
     private final int tamanho;
     private final int nBombas;
-    private ArrayList<ArrayList<Quadrado<?>>> board;
+    private final ArrayList<ArrayList<Quadrado<?>>> board;
 
     /**
      * Instancia um novo <code>Tabuleiro</code>.
@@ -52,26 +52,18 @@ public class Tabuleiro {
     }
 
     /**
-     * @return O tabuleiro
+     * @return A matriz que define o tabuleiro
      */
     public ArrayList<ArrayList<Quadrado<?>>> getBoard() {
         return board;
     }
 
-    /**
-     * Sets board.
-     *
-     * @param board the board
-     */
-    public void setBoard(ArrayList<ArrayList<Quadrado<?>>> board) {
-        this.board = board;
-    }
+    //Métodos ----------------------------------------------------------------------------------------------------------
 
     /**
-     * Inicia tabuleiro.
+     * Inicializa um tabuleiro em que todos os quadrados estão vazios
      */
-//Métodos ----------------------------------------------------------------------------------------------------------
-    public void iniciaTabuleiro() {
+    private void iniciaTabuleiro() {
         //preenche o tabuleiro com objetos Vazios
         for (int i = 0; i < tamanho; i++) {
             ArrayList<Quadrado<?>> linha = board.get(i); //pegamos a linha i
@@ -83,9 +75,9 @@ public class Tabuleiro {
     }
 
     /**
-     * Sorteia minas.
+     * Sorteia as minas no tabuleiro
      */
-    public void sorteiaMinas() {
+    private void sorteiaMinas() {
         boolean sorteado;
         int linha, coluna;
         Random random = new Random();
@@ -108,12 +100,12 @@ public class Tabuleiro {
     }
 
     /**
-     * Preenche dicas.
+     * Preenche os quadrados ao redor de uma bomba nas coordenadas (<code>linha</code>, <code>coluna</code>) com quadrados com conteúdo <code>Numerado</code>, ou atualiza as dicas dos quadrados numerados já presentes.
      *
-     * @param linha  the linha
-     * @param coluna the coluna
+     * @param linha  linha da bomba
+     * @param coluna coluna da bomba
      */
-    public void preencheDicas(int linha, int coluna) {
+    private void preencheDicas(int linha, int coluna) {
         for (int i = linha - 1; i <= linha + 1; i++) {
             for (int j = coluna - 1; j <= coluna + 1; j++) {
                 if (coordenadaValida(i, j, tamanho)) {
@@ -129,11 +121,11 @@ public class Tabuleiro {
     }
 
     /**
-     * Coordenada valida boolean.
+     * Determina se uma dada coordenada é válida para um tabuleiro de determinado tamanho.
      *
-     * @param i       the
-     * @param j       the j
-     * @param tamanho the tamanho
+     * @param i       índice da linha
+     * @param j       índice da coluna
+     * @param tamanho tamnaho do tabuleiro
      * @return the boolean
      */
     public static boolean coordenadaValida(int i, int j, int tamanho) {
@@ -141,13 +133,13 @@ public class Tabuleiro {
     }
 
     /**
-     * Imprimir.
+     * Imprime o tabuleiro, com o conteúdo de seus quadrados revelado, no terminal
      */
     public void imprimir() {
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++)
                 System.out.printf(board.get(i).get(j).getConteudo().revelar() + " ");
-            System.out.printf("\n");
+            System.out.print("\n");
         }
     }
 }

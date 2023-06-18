@@ -16,15 +16,16 @@ import java.util.ArrayList;
 
 public class TabuleiroGUI extends JPanel implements MouseListener, ActionListener {
     private Tabuleiro t;
+    private int tamanho;
     private NossoBotao[][] botoes;
     private Timer cronometro;
     private boolean cronometroIniciado;
     private JLabel labelCronometro;
     private ImageIcon iconeBandeira;
     private ImageIcon iconeBomba;
-    private int cliques = 0;
-    private int segundos = 0;
-    private int minutos = 0;
+    private int cliques;
+    private int segundos;
+    private int minutos;
     private int bandeiras;
 
     //Construtor -------------------------------------------------------------------------------------------------------
@@ -126,8 +127,13 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
 
     //Métodos ----------------------------------------------------------------------------------------------------------
     public void inicializar(int tamanho) {
+        this.tamanho = tamanho;
         t = new Tabuleiro(tamanho);
         bandeiras = t.getnBombas();
+
+        segundos = 0;
+        minutos = 0;
+        cliques = 0;
 
         this.setLayout(new GridLayout(tamanho + 1, tamanho, 2, 2));
 
@@ -193,7 +199,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
 
         if (venceu) {
             int score = contabilizaPontos();
-            m = "Você Venceu! \nPontução: " + score + "\nParabéns";
+            m = "Você Venceu!\nPontução: " + score + "\nParabéns";
 
             JButton[] opcoes = new JButton[2];
             opcoes[0] = new JButton("Menu Inicial");
@@ -235,7 +241,6 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     public boolean jaAcabou() {
         int i = 0;
         int j = 0;
-        int tamanho = getT().getTamanho();
         ArrayList<ArrayList<Quadrado<?>>> t = getT().getBoard();
 
         while (i < tamanho) {
@@ -316,22 +321,23 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     }
 
     private void abrirBombas() {
-        int tamanho = t.getTamanho();
+        int conteudo;
 
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
-                int conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
+                conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
                 if (conteudo == -1) {
-                    botoes[i][j].setEnabled(false);
-                    botoes[i][j].setDisabledIcon(iconeBomba);
-                    botoes[i][j].setText("bomba");
+                    NossoBotao aux = botoes[i][j];
+                    aux.setEnabled(false);
+                    aux.setDisabledIcon(iconeBomba);
+                    aux.setText("bomba");
                 }
             }
         }
     }
 
     public void abrirVazio(int linha, int coluna) {
-        int tamanho = t.getTamanho();
+        int conteudo;
 
         NossoBotao botao = botoes[linha][coluna];
         if (botao.isEnabled())
@@ -341,7 +347,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         for (int i = linha - 1; i <= linha + 1; i++) {
             for (int j = coluna - 1; j <= coluna + 1; j++) {
                 if (Tabuleiro.coordenadaValida(i, j, tamanho)) {
-                    int conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
+                    conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
                     if (conteudo == 0 && botoes[i][j].isEnabled())
                         abrirVazio(i, j);
                     else if (conteudo != -1)
@@ -363,14 +369,16 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     //Action Listener --------------------------------------------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent e) {
+        JButton source = (JButton) e.getSource();
+        String sourceText = source.getText();
+
         MainPanel parent = (MainPanel) this.getParent().getParent();
         CardLayout layout = parent.getLayout();
         JPanel telas = parent.getTELAS();
-        JButton source = (JButton) e.getSource();
 
-        if (source.getText().equals("Menu Inicial")) {
+        if (sourceText.equals("Menu Inicial")) {
             layout.show(telas, parent.getMENUINICIAL());
-        } else if (source.getText().equals("Placar")) {
+        } else if (sourceText.equals("Placar")) {
             layout.show(telas, parent.getPLACAR());
         }
         destruir();

@@ -1,6 +1,6 @@
 @startuml
 
-package Campo-Minado{
+package Campo-Minado #EEE{
     class Tabuleiro{
         - int tamanho
         - ArrayList<ArrayList<Quadrado>> board

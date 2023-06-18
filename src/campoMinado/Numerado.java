@@ -7,6 +7,7 @@ public class Numerado extends Conteudo {
     private int dica;
 
     //Construtor -------------------------------------------------------------------------------------------------------
+
     /**
      * Instancia um novo <code>Numerado</code>.
      *
@@ -17,6 +18,7 @@ public class Numerado extends Conteudo {
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
+
     /**
      * @return A dica em <code>Numerado</code>.
      */
