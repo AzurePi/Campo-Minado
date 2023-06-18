@@ -13,13 +13,12 @@ public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
 
     //Construtor -------------------------------------------------------------------------------------------------------
     public Pontuacao(String nome, int pontos) throws InvalidNameException {
+        /*
         if (caracteresInvalidos.isEmpty())
             setCaracteresInvalidos();
-
-        if (validaNome(nome))
-            this.nome = nome;
-        else
-            throw new InvalidNameException();
+        */
+        validaNome(nome);
+        this.nome = nome;
         this.pontos = pontos;
     }
 
@@ -48,12 +47,27 @@ public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
         return esse.compareTo(aquele);
     }
 
-    private static boolean validaNome(String nome) {
-        for (int i = 0; i < nome.length(); i++) {
+    private static void validaNome(String nome) throws InvalidNameException {
+        int length = nome.length();
+
+        //é inválido se tem menos de 3 caracteres, ou mais de 12
+        if (length > 12 || length < 3)
+            throw new InvalidNameException("O nome no placar deve ter de 3 a 12 caracteres");
+
+        //é inválido se não começa com uma letra
+        if(!Character.isLetter(nome.charAt(0)))
+            throw new InvalidNameException("O nome no placar deve começar com uma letra");
+
+        //é inválido se possui caracteres que não são alfanuméricos
+        if(!nome.matches("[a-zA-Z0-9]*$"))
+            throw new InvalidNameException("O nome no placar deve conter apenas caracteres alfanuméricos");
+
+        /*
+        for (int i = 0; i < length; i++) {
             if (caracteresInvalidos.contains(nome.charAt(i)))
                 return false;
         }
-        return true;
+        */
     }
 
     private static void setCaracteresInvalidos() {
