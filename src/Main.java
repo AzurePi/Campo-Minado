@@ -23,11 +23,14 @@ public class Main {
     private static void createAndShowGUI() {
         JFrame f = new JFrame("Campo Minado");
 
+        //TODO: set look and feel
+
         ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
         f.setIconImage(iconeBomba.getImage());
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(580, 600);
+        f.setResizable(false);
 
         f.add(new MainPanel());
         f.pack();

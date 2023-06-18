@@ -14,7 +14,7 @@ public class Placar<P extends Pontuacao> {
         pontuacoes = new ArrayList<>();
         tamanho = 0;
 
-        filename = "pontuacao";
+        filename = "src/placar/files/placar";
 
         Type tipo = this.getClass().getGenericSuperclass();
         if (tipo == PontuacaoFacil.class)
@@ -25,6 +25,7 @@ public class Placar<P extends Pontuacao> {
             filename += "Dificil";
 
         filename += ".dat";
+        readFromFile();
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
@@ -50,37 +51,29 @@ public class Placar<P extends Pontuacao> {
     public void readFromFile() {
         try {
             ObjectInputStream reader = new ObjectInputStream(new FileInputStream(filename));
+            P aux;
+
             while (true) {
                 try {
-                    P aux = (P) reader.readObject();
-                    addPontuacao((P) aux);
+                    aux = (P) reader.readObject();
+                    addPontuacao(aux);
                 } catch (EOFException e) {
                     break;
                 }
             }
             reader.close();
-        } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (ClassNotFoundException | IOException ignored) {
         }
     }
 
     public void printToFile() {
-        String filename = "pontuacao";
-        filename += pontuacoes.get(0).getClass().getSimpleName();
-        filename += ".dat";
-
         try {
             ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(filename));
 
             for (int i = 0; i < tamanho; i++)
                 writer.writeObject(pontuacoes.get(i));
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            writer.close();
+        } catch (IOException ignored) {
         }
-        /*
-        TODO: aprender a usar arquivos
-        armazenar as informações na pasta files
-         */
     }
 }

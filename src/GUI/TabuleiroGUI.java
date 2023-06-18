@@ -141,6 +141,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
             this.add(new JLabel()); //preenche com fillers
         labelCronometro = new JLabel("0 : 0");
         labelCronometro.setHorizontalAlignment(SwingConstants.CENTER);
+        labelCronometro.setFont(new Font(labelCronometro.getFont().getName(), Font.PLAIN, 25));
         this.add(labelCronometro);
         for (int i = 0; i < tamanho / 2; i++)
             this.add(new JLabel()); //preenche com fillers
