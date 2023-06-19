@@ -1,5 +1,6 @@
 package src.GUI;
 
+import exceptions.InvalidNameException;
 import src.placar.*;
 
 import javax.swing.*;
@@ -11,22 +12,14 @@ public class PlacarGUI extends JPanel implements ActionListener {
     private final Placar<PontuacaoFacil> placarF;
     private final Placar<PontuacaoMedio> placarM;
     private final Placar<PontuacaoDificil> placarD;
-    private JLabel labelTitulo;
     private final JPanel painelFacil;
     private final JPanel painelMedio;
     private final JPanel painelDificil;
-    private final String FACIL;
-    private final String MEDIO;
-    private final String DIFICIL;
 
     public PlacarGUI() {
-        placarF = new Placar<>();
-        placarM = new Placar<>();
-        placarD = new Placar<>();
-
-        FACIL = "Fácil";
-        MEDIO = "Médio";
-        DIFICIL = "Difícil";
+        placarF = new Placar<>("Fácil");
+        placarM = new Placar<>("Médio");
+        placarD = new Placar<>("Difícil");
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -35,7 +28,7 @@ public class PlacarGUI extends JPanel implements ActionListener {
         voltar.setVisible(true);
         this.add(voltar);
 
-        labelTitulo = new JLabel("Placar");
+        JLabel labelTitulo = new JLabel("Placar");
         labelTitulo.setFont(new Font(labelTitulo.getFont().getName(), Font.PLAIN, 35));
         labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         labelTitulo.setVisible(true);
@@ -45,20 +38,25 @@ public class PlacarGUI extends JPanel implements ActionListener {
         painelMedio = new JPanel();
         painelDificil = new JPanel();
 
-        inicializar(painelFacil);
-        inicializar(painelMedio);
-        inicializar(painelDificil);
+        atualizar(painelFacil);
+        atualizar(painelMedio);
+        atualizar(painelDificil);
+
+        painelFacil.setLayout(new BoxLayout(painelFacil, BoxLayout.Y_AXIS));
+        painelMedio.setLayout(new BoxLayout(painelMedio, BoxLayout.Y_AXIS));
+        painelDificil.setLayout(new BoxLayout(painelDificil, BoxLayout.Y_AXIS));
 
         JTabbedPane tabs = new JTabbedPane();
-        tabs.addTab(FACIL, painelFacil);
-        tabs.addTab(MEDIO, painelMedio);
-        tabs.addTab(DIFICIL, painelDificil);
+        tabs.addTab("Fácil", painelFacil);
+        tabs.addTab("Médio", painelMedio);
+        tabs.addTab("Difícil", painelDificil);
 
         this.add(tabs);
     }
 
-    private void inicializar(JPanel painel) {
-        painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
+    private void atualizar(JPanel painel) {
+        while (painel.getComponentCount() > 0)
+            painel.remove(0);
 
         Placar<?> placar;
         if (painel == painelFacil)
@@ -70,13 +68,40 @@ public class PlacarGUI extends JPanel implements ActionListener {
 
         int tamanho = Math.min(placar.getTamanho(), 10);
 
-        Pontuacao aux;
-        String textoAux;
+        Pontuacao pontuacao;
+        String texto;
         for (int i = 0; i < tamanho; i++) {
-            aux = placar.getPontuacoes().get(i);
-            textoAux = aux.getNome() + "\t" + aux.getPontos();
-            painel.add(new JLabel(textoAux));
+            pontuacao = placar.getPontuacoes().get(i);
+            texto = pontuacao.getNome() + "\t" + pontuacao.getPontos();
+
+            JLabel l = new JLabel(texto);
+            l.setVisible(true);
+
+            painel.add(l);
         }
+    }
+
+    public void adicionarPontuacao(int score, String nome, int tamanho) throws InvalidNameException {
+        switch (tamanho) {
+            case 5 -> {
+                placarF.addPontuacao(new PontuacaoFacil(nome, score));
+                atualizar(painelFacil);
+            }
+            case 7 -> {
+                placarM.addPontuacao(new PontuacaoMedio(nome, score));
+                atualizar(painelMedio);
+            }
+            case 11 -> {
+                placarD.addPontuacao(new PontuacaoDificil(nome, score));
+                atualizar(painelDificil);
+            }
+        }
+    }
+
+    public void salvar() {
+        placarF.printToFile();
+        placarM.printToFile();
+        placarD.printToFile();
     }
 
     @Override

@@ -1,7 +1,6 @@
 package src.placar;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Placar<P extends Pontuacao> {
@@ -10,21 +9,16 @@ public class Placar<P extends Pontuacao> {
     String filename;
 
     //Construtor -------------------------------------------------------------------------------------------------------
-    public Placar() {
+    public Placar(String dificuldade) {
         pontuacoes = new ArrayList<>();
         tamanho = 0;
 
-        filename = "src/placar/files/placar";
+        switch (dificuldade) {
+            case "Fácil" -> filename = "src/placar/files/placarFacil.dat";
+            case "Médio" -> filename = "src/placar/files/placarMedio.dat";
+            case "Difícil" -> filename = "src/placar/files/placarDificil.dat";
+        }
 
-        Type tipo = this.getClass().getGenericSuperclass();
-        if (tipo == PontuacaoFacil.class)
-            filename += "Facil";
-        else if (tipo == PontuacaoMedio.class)
-            filename += "Medio";
-        else
-            filename += "Dificil";
-
-        filename += ".dat";
         readFromFile();
     }
 
@@ -67,13 +61,15 @@ public class Placar<P extends Pontuacao> {
     }
 
     public void printToFile() {
-        try {
-            ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(filename));
+        if(tamanho > 0){
+            try {
+                ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(filename));
 
-            for (int i = 0; i < tamanho; i++)
-                writer.writeObject(pontuacoes.get(i));
-            writer.close();
-        } catch (IOException ignored) {
+                for (int i = 0; i < tamanho; i++)
+                    writer.writeObject(pontuacoes.get(i));
+                writer.close();
+            } catch (IOException ignored) {
+            }
         }
     }
 }
