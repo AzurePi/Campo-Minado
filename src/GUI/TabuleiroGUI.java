@@ -200,7 +200,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
                 this.add(botao);
             }
         }
-        //t.imprimir();        //caso queiramos imprimir o campo no terminal
+        t.imprimir();        //caso queiramos imprimir o campo no terminal
     }
 
     public void iniciarCronometro() {

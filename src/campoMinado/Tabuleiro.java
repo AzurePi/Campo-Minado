@@ -14,7 +14,7 @@ public class Tabuleiro {
     /**
      * Instancia um novo <code>Tabuleiro</code>.
      *
-     * @param tamanho O tamanho do tabuleiro
+     * @param tamanho o tamanho do tabuleiro
      */
 //Construtor -------------------------------------------------------------------------------------------------------
     public Tabuleiro(int tamanho) {
@@ -37,7 +37,7 @@ public class Tabuleiro {
     }
 
     /**
-     * @return O tamanho do tabuleiro
+     * @return o tamanho do tabuleiro
      */
     //Setters & Getters ------------------------------------------------------------------------------------------------
     public int getTamanho() {
@@ -45,14 +45,14 @@ public class Tabuleiro {
     }
 
     /**
-     * @return O número de bombas no tabuleiro
+     * @return o número de bombas no tabuleiro
      */
     public int getnBombas() {
         return nBombas;
     }
 
     /**
-     * @return A matriz que define o tabuleiro
+     * @return a matriz que define o tabuleiro
      */
     public ArrayList<ArrayList<Quadrado<?>>> getBoard() {
         return board;

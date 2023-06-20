@@ -19,7 +19,7 @@ public class MainPanel extends JPanel {
     //Construtor -------------------------------------------------------------------------------------------------------
 
     /**
-     * Constrói um novo <code>MainPanel</code>.
+     * Constrói um novo <code>MainPanel</code>. Inicializa painéis para o menu inicial tabuleiro e placar, e estabelece o <code>Cardlayout</code>.
      */
     public MainPanel() {
         layout = new CardLayout();
@@ -46,21 +46,21 @@ public class MainPanel extends JPanel {
     //Setters & Getters ------------------------------------------------------------------------------------------------
 
     /**
-     * @return O painel onde se encontra o menu inicial
+     * @return o painel onde se encontra o menu inicial
      */
     public MenuInicialGUI getMenuInicial() {
         return menuInicial;
     }
 
     /**
-     * @return O painel onde se encontra o tabuleiro
+     * @return o painel onde se encontra o tabuleiro
      */
     public TabuleiroGUI getTabuleiro() {
         return tabuleiro;
     }
 
     /**
-     * @return O painel onde se encontra o placar
+     * @return o painel onde se encontra o placar
      */
     public PlacarGUI getPlacar() {
         return placar;
@@ -72,7 +72,7 @@ public class MainPanel extends JPanel {
     }
 
     /**
-     * @return O painel que contém os painíis que se alternam por meio do <code>CardLayout</code>
+     * @return o painel que contém os painíis que se alternam por meio do <code>CardLayout</code>
      */
     public JPanel getTelas() {
         return telas;

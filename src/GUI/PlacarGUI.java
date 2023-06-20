@@ -42,9 +42,9 @@ public class PlacarGUI extends JPanel implements ActionListener {
         painelMedio = new JPanel();
         painelDificil = new JPanel();
 
-        iniciar(painelFacil, placarF);
-        iniciar(painelMedio, placarM);
-        iniciar(painelDificil, placarD);
+        atualizar(painelFacil, placarF);
+        atualizar(painelMedio, placarM);
+        atualizar(painelDificil, placarD);
 
         JTabbedPane tabs = new JTabbedPane();
         tabs.addTab("Fácil", painelFacil);
@@ -54,16 +54,19 @@ public class PlacarGUI extends JPanel implements ActionListener {
         this.add(tabs);
     }
 
-    private void iniciar(JPanel painel, Placar<?> placar) {
+    private void atualizar(JPanel painel, Placar<?> placar) {
+        while(painel.getComponentCount() > 0)
+            painel.remove(0);
+
         painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
 
-        int tamanho = Math.min(placar.getTamanho(), 10);
+        int tamanho = Math.min(placar.getPontuacoes().size(), 10);
 
         Pontuacao pontuacao;
         String texto;
         for (int i = 0; i < tamanho; i++) {
             pontuacao = placar.getPontuacoes().get(i);
-            texto = pontuacao.getNome() + "\t" + pontuacao.getPontos();
+            texto = pontuacao.getNome() + "                 " + pontuacao.getPontos();
 
             JLabel l = new JLabel(texto);
             l.setFont(fontePlacar);
@@ -77,20 +80,19 @@ public class PlacarGUI extends JPanel implements ActionListener {
 
         switch (tamanho) {
             case 5 -> {
-                placarF.addPontuacao(new PontuacaoFacil(nome, score));
+                placarF.add(new PontuacaoFacil(nome, score));
                 painelFacil.add(l);
             }
             case 7 -> {
-                placarM.addPontuacao(new PontuacaoMedio(nome, score));
+                placarM.add(new PontuacaoMedio(nome, score));
                 painelMedio.add(l);
             }
             case 11 -> {
-                placarD.addPontuacao(new PontuacaoDificil(nome, score));
+                placarD.add(new PontuacaoDificil(nome, score));
                 painelDificil.add(l);
             }
         }
     }
-        //// TODO: consegui fazer aparecer na GUI! Falta ir pros arquivos
 
     public void salvar() {
         placarF.printToFile();

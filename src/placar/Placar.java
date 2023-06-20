@@ -5,13 +5,11 @@ import java.util.ArrayList;
 
 public class Placar<P extends Pontuacao> {
     private final ArrayList<P> pontuacoes;
-    private int tamanho;
     String filename;
 
     //Construtor -------------------------------------------------------------------------------------------------------
     public Placar(String dificuldade) {
         pontuacoes = new ArrayList<>();
-        tamanho = 0;
 
         switch (dificuldade) {
             case "Fácil" -> filename = "src/placar/files/placarFacil.dat";
@@ -27,12 +25,8 @@ public class Placar<P extends Pontuacao> {
         return pontuacoes;
     }
 
-    public int getTamanho() {
-        return tamanho;
-    }
-
     //Métodos ----------------------------------------------------------------------------------------------------------
-    public void addPontuacao(P pontuacao) {
+    public void add(P pontuacao) {
         pontuacoes.add(pontuacao);
         pontuacoes.sort(null);
     }
@@ -46,27 +40,36 @@ public class Placar<P extends Pontuacao> {
             do {
                 try {
                     aux = (P) reader.readObject();
-                    addPontuacao(aux);
+                    add(aux);
                     flag = true;
                 } catch (EOFException e) {
                     flag = false; //se chegamos ao fim do arquivo, saímos do loop
                 }
             } while (flag);
             reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo " + filename + "não encontrado para leitura");
         } catch (ClassNotFoundException | IOException ignored) {
         }
+        //printar();
     }
 
     public void printToFile() {
-        if (tamanho > 0) {
-            try {
-                ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(filename));
+        int size = pontuacoes.size();
 
-                for (int i = 0; i < tamanho; i++)
-                    writer.writeObject(pontuacoes.get(i));
-                writer.close();
-            } catch (IOException ignored) {
-            }
+        try {
+            ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(filename));
+
+            for (int i = 0; i < size; i++)
+                writer.writeObject(pontuacoes.get(i));
+            writer.close();
+        } catch (IOException ignored) {
         }
+
+    }
+
+    public void printar() {
+        for (int i = 0; i < pontuacoes.size(); i++)
+            System.out.println(pontuacoes.get(i).getNome() + pontuacoes.get(i).getPontos());
     }
 }

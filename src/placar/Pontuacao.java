@@ -2,7 +2,9 @@ package src.placar;
 
 import exceptions.InvalidNameException;
 
-public abstract class Pontuacao implements Comparable<Pontuacao> {
+import java.io.Serializable;
+
+public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
     private final String nome;
     private final int pontos;
 
@@ -27,7 +29,7 @@ public abstract class Pontuacao implements Comparable<Pontuacao> {
     public int compareTo(Pontuacao o) {
         Integer esse = this.pontos;
         Integer aquele = o.getPontos();
-        return esse.compareTo(aquele);
+        return aquele.compareTo(esse);
     }
 
     private static void validaNome(String nome) throws InvalidNameException {
