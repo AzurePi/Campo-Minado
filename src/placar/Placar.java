@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Placar<P extends Pontuacao> {
-    private ArrayList<P> pontuacoes;
+    private final ArrayList<P> pontuacoes;
     private int tamanho;
     String filename;
 
@@ -19,17 +19,12 @@ public class Placar<P extends Pontuacao> {
             case "Difícil" -> filename = "src/placar/files/placarDificil.dat";
         }
 
-        readFromFile();
+        readFromFile(); //tenta ler do arquivo, caso já existam informações do placar em um arquivo
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
     public ArrayList<P> getPontuacoes() {
         return pontuacoes;
-    }
-
-    public void setPontuacoes(ArrayList<P> pontuacoes) {
-        this.pontuacoes = pontuacoes;
-        tamanho = pontuacoes.size();
     }
 
     public int getTamanho() {
@@ -47,21 +42,23 @@ public class Placar<P extends Pontuacao> {
             ObjectInputStream reader = new ObjectInputStream(new FileInputStream(filename));
             P aux;
 
-            while (true) {
+            boolean flag;
+            do {
                 try {
                     aux = (P) reader.readObject();
                     addPontuacao(aux);
+                    flag = true;
                 } catch (EOFException e) {
-                    break;
+                    flag = false; //se chegamos ao fim do arquivo, saímos do loop
                 }
-            }
+            } while (flag);
             reader.close();
         } catch (ClassNotFoundException | IOException ignored) {
         }
     }
 
     public void printToFile() {
-        if(tamanho > 0){
+        if (tamanho > 0) {
             try {
                 ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(filename));
 

@@ -22,8 +22,8 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     private NossoBotao[][] botoes;
     private Timer cronometro;
     private boolean cronometroIniciado;
-    private JLabel labelCronometro;
-    private JLabel labelBandeiras;
+    private final JLabel labelCronometro;
+    private final JLabel labelBandeiras;
     private ImageIcon iconeBomba;
     private ImageIcon iconeBandeira;
     private int cliques;
@@ -32,12 +32,24 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     private int bandeiras;
     private final Color vermelhoBandeira;
     private final Color vermelhoBomba;
-    private Font fonteBomba;
+    private final Font fonteBomba;
 
     //Construtor -------------------------------------------------------------------------------------------------------
     public TabuleiroGUI() {
         iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
+        iconeBomba = new ImageIcon(iconeBomba.getImage().getScaledInstance(10, 10, Image.SCALE_DEFAULT));
+
+        //cria um ícone, e com base nele cria uma versão escalonada
         iconeBandeira = new ImageIcon("src/GUI/assets/noun-flag-5786229.png");
+        iconeBandeira = new ImageIcon(iconeBandeira.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+
+        labelCronometro = new JLabel();
+        labelCronometro.setHorizontalAlignment(SwingConstants.CENTER);
+        labelCronometro.setFont(new Font(labelCronometro.getFont().getName(), Font.PLAIN, 25));
+
+        labelBandeiras = new JLabel(iconeBandeira, SwingConstants.CENTER);
+
+        fonteBomba = new Font(labelCronometro.getFont().getName(), Font.BOLD, 15);
 
         UIManager.put("Button.disabledText", Color.BLACK);
         vermelhoBomba = new Color(100, 0, 0);
@@ -89,16 +101,8 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         return labelCronometro;
     }
 
-    public void setLabelCronometro(JLabel labelCronometro) {
-        this.labelCronometro = labelCronometro;
-    }
-
     public JLabel getLabelBandeiras() {
         return labelBandeiras;
-    }
-
-    public void setLabelBandeiras(JLabel labelBandeiras) {
-        this.labelBandeiras = labelBandeiras;
     }
 
     public ImageIcon getIconeBomba() {
@@ -161,10 +165,6 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         return fonteBomba;
     }
 
-    public void setFonteBomba(Font fonteBomba) {
-        this.fonteBomba = fonteBomba;
-    }
-
     //Métodos ----------------------------------------------------------------------------------------------------------
     public void inicializar(int tamanho) {
         this.tamanho = tamanho;
@@ -177,22 +177,17 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
 
         this.setLayout(new GridLayout(tamanho + 1, tamanho, 2, 2));
 
+        //cria a faixa superior do tabuleiro, com um timer e um contador de bandeiras
         for (int i = 0; i < tamanho / 2; i++)
             this.add(new JLabel()); //preenche com fillers
-        labelCronometro = new JLabel("0 : 0");
-        labelCronometro.setHorizontalAlignment(SwingConstants.CENTER);
-        labelCronometro.setFont(new Font(labelCronometro.getFont().getName(), Font.PLAIN, 25));
+        labelCronometro.setText(minutos + " : " + segundos);
         this.add(labelCronometro);
         for (int i = 1; i < tamanho / 2; i++)
             this.add(new JLabel()); //preenche com fillers
 
-        iconeBandeira = new ImageIcon(iconeBandeira.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-
-        labelBandeiras = new JLabel(String.valueOf(bandeiras), iconeBandeira, SwingConstants.CENTER);
+        labelBandeiras.setText(String.valueOf(bandeiras));
         this.add(labelBandeiras);
-
-        fonteBomba = new Font(labelCronometro.getFont().getName(), Font.BOLD, 15);
-        iconeBomba = new ImageIcon(iconeBomba.getImage().getScaledInstance(10, 10, Image.SCALE_DEFAULT));
+        //----------------------------------------------------------------------------
 
         botoes = new NossoBotao[tamanho][tamanho];
 
@@ -205,7 +200,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
                 this.add(botao);
             }
         }
-        t.imprimir();
+        //t.imprimir();        //caso queiramos imprimir o campo no terminal
     }
 
     public void iniciarCronometro() {
@@ -228,47 +223,49 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         cronometro.stop();
         cronometroIniciado = false;
         String m, t;
-        Object[] opcoes;
 
         if (venceu) {
             int score = contabilizaPontos();
             String nome;
-            m = "Você Venceu! Parabéns!\nPontução: " + score;
             t = "Vitória :)";
+            m = "Você Venceu! Parabéns!\nPontução: " + score;
 
-            opcoes = new Object[1];
-            JTextField inputNome = new JTextField("Nome para o placar", 12);
-            opcoes[0] = inputNome;
-
-            MainPanel parent = (MainPanel) this.getParent().getParent();
+            MainPanel mainPanel = (MainPanel) this.getParent().getParent();
 
             boolean flag;
             do {
                 try {
-                    nome = String.valueOf(JOptionPane.showInputDialog(f, m, t, JOptionPane.PLAIN_MESSAGE, null, null, "SeuNome"));
+                    nome = String.valueOf(JOptionPane.showInputDialog(f,
+                            m,
+                            t,
+                            JOptionPane.PLAIN_MESSAGE,
+                            null,
+                            null,
+                            "SeuNome"));
 
-                    parent.getPlacar().adicionarPontuacao(score, nome, tamanho);
+                    if (nome != null)
+                        mainPanel.getPlacar().adicionarPontuacao(score, nome, tamanho);
                     flag = false;
                 } catch (InvalidNameException e) {
-                    System.out.println("ERRO: " + e.getMessage());
+                    JOptionPane.showMessageDialog(f, e.getMessage(), "ERRO", JOptionPane.PLAIN_MESSAGE);
                     flag = true;
                 }
             } while (flag);
 
-            CardLayout layout = parent.getLayout();
-            JPanel telas = parent.getTELAS();
+            CardLayout layout = mainPanel.getLayout();
+            JPanel telas = mainPanel.getTelas();
 
-            layout.show(telas, parent.getMENUINICIAL());
+            layout.show(telas, MainPanel.MENU_INICIAL);
             destruir();
         } else {
-            m = "Você Perdeu!";
             t = "Derrota :(";
-            opcoes = new JButton[1];
+            m = "Você Perdeu!";
+            Object[] opcoes = new JButton[1];
             opcoes[0] = new JButton("Menu Inicial");
 
             ((JButton) opcoes[0]).addActionListener(this);
 
-            JOptionPane.showOptionDialog(f,
+            int opcao = JOptionPane.showOptionDialog(f,
                     m,
                     t,
                     JOptionPane.DEFAULT_OPTION,
@@ -276,6 +273,8 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
                     null,
                     opcoes,
                     null);
+            if (opcao == JOptionPane.CLOSED_OPTION)
+                ((JButton) opcoes[0]).doClick();
         }
     }
 
@@ -287,14 +286,13 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     public boolean jaAcabou() {
         int i = 0;
         int j = 0;
-        ArrayList<ArrayList<Quadrado<?>>> t = getT().getBoard();
+
+        ArrayList<ArrayList<Quadrado<?>>> board = t.getBoard();
 
         while (i < tamanho) {
-            Conteudo c = t.get(i).get(j).getConteudo();
-            if (!(c instanceof Bomba)) {
-                if (!(botoes[i][j].isFoiClickado()))
-                    return false;
-            }
+            Conteudo c = board.get(i).get(j).getConteudo();
+            if (!(c instanceof Bomba) && !(botoes[i][j].isFoiClickado()))
+                return false;
             j++;
             if (j == tamanho) {
                 j = 0;
@@ -318,8 +316,8 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         int button = e.getButton();
         NossoBotao source = (NossoBotao) e.getSource();
 
-        //botão esquerdo -> revela o conteúdo
-        //botão direito -> coloca uma bandeira
+        //botão esquerdo ≥ revela o conteúdo
+        //botão direito ≥ coloca uma bandeira
         if (button == 1 && source.isEnabled()) {
             cliques++;
 
@@ -417,7 +415,6 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
 
         int numero = t.getBoard().get(linha).get(coluna).getConteudo().revelar();
         numerado.setText(String.valueOf(numero));
-
     }
 
     //Action Listener --------------------------------------------------------------------------------------------------
@@ -428,10 +425,10 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
 
         MainPanel parent = (MainPanel) this.getParent().getParent();
         CardLayout layout = parent.getLayout();
-        JPanel telas = parent.getTELAS();
+        JPanel telas = parent.getTelas();
 
         if (sourceText.equals("Menu Inicial"))
-            layout.show(telas, parent.getMENUINICIAL());
+            layout.show(telas, MainPanel.MENU_INICIAL);
 
         Window w = SwingUtilities.getWindowAncestor(source);
         if (w != null)

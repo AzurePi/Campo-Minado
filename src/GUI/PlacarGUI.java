@@ -15,8 +15,10 @@ public class PlacarGUI extends JPanel implements ActionListener {
     private final JPanel painelFacil;
     private final JPanel painelMedio;
     private final JPanel painelDificil;
+    private final Font fontePlacar;
 
     public PlacarGUI() {
+        //a chamada do construtor de Placar<> já realiza a leitura de eventuais informações de arquivos
         placarF = new Placar<>("Fácil");
         placarM = new Placar<>("Médio");
         placarD = new Placar<>("Difícil");
@@ -34,17 +36,15 @@ public class PlacarGUI extends JPanel implements ActionListener {
         labelTitulo.setVisible(true);
         this.add(labelTitulo);
 
+        fontePlacar = new Font(labelTitulo.getFont().getName(), Font.PLAIN, 15);
+
         painelFacil = new JPanel();
         painelMedio = new JPanel();
         painelDificil = new JPanel();
 
-        atualizar(painelFacil);
-        atualizar(painelMedio);
-        atualizar(painelDificil);
-
-        painelFacil.setLayout(new BoxLayout(painelFacil, BoxLayout.Y_AXIS));
-        painelMedio.setLayout(new BoxLayout(painelMedio, BoxLayout.Y_AXIS));
-        painelDificil.setLayout(new BoxLayout(painelDificil, BoxLayout.Y_AXIS));
+        iniciar(painelFacil, placarF);
+        iniciar(painelMedio, placarM);
+        iniciar(painelDificil, placarD);
 
         JTabbedPane tabs = new JTabbedPane();
         tabs.addTab("Fácil", painelFacil);
@@ -54,17 +54,8 @@ public class PlacarGUI extends JPanel implements ActionListener {
         this.add(tabs);
     }
 
-    private void atualizar(JPanel painel) {
-        while (painel.getComponentCount() > 0)
-            painel.remove(0);
-
-        Placar<?> placar;
-        if (painel == painelFacil)
-            placar = placarF;
-        else if (painel == painelMedio)
-            placar = placarM;
-        else
-            placar = placarD;
+    private void iniciar(JPanel painel, Placar<?> placar) {
+        painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
 
         int tamanho = Math.min(placar.getTamanho(), 10);
 
@@ -75,28 +66,31 @@ public class PlacarGUI extends JPanel implements ActionListener {
             texto = pontuacao.getNome() + "\t" + pontuacao.getPontos();
 
             JLabel l = new JLabel(texto);
-            l.setVisible(true);
-
+            l.setFont(fontePlacar);
             painel.add(l);
         }
     }
 
     public void adicionarPontuacao(int score, String nome, int tamanho) throws InvalidNameException {
+        JLabel l = new JLabel(nome + "\t" + score);
+        l.setFont(fontePlacar);
+
         switch (tamanho) {
             case 5 -> {
                 placarF.addPontuacao(new PontuacaoFacil(nome, score));
-                atualizar(painelFacil);
+                painelFacil.add(l);
             }
             case 7 -> {
                 placarM.addPontuacao(new PontuacaoMedio(nome, score));
-                atualizar(painelMedio);
+                painelMedio.add(l);
             }
             case 11 -> {
                 placarD.addPontuacao(new PontuacaoDificil(nome, score));
-                atualizar(painelDificil);
+                painelDificil.add(l);
             }
         }
     }
+        //// TODO: consegui fazer aparecer na GUI! Falta ir pros arquivos
 
     public void salvar() {
         placarF.printToFile();
@@ -108,8 +102,8 @@ public class PlacarGUI extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         MainPanel parent = (MainPanel) this.getParent().getParent();
         CardLayout layout = parent.getLayout();
-        JPanel telas = parent.getTELAS();
+        JPanel telas = parent.getTelas();
 
-        layout.show(telas, parent.getMENUINICIAL());
+        layout.show(telas, MainPanel.MENU_INICIAL);
     }
 }

@@ -2,7 +2,9 @@ package src.placar;
 
 import exceptions.InvalidNameException;
 
-public class PontuacaoFacil extends Pontuacao {
+import java.io.Serializable;
+
+public class PontuacaoFacil extends Pontuacao implements Serializable {
     public PontuacaoFacil(String nome, int pontos) throws InvalidNameException {
         super(nome, pontos);
     }

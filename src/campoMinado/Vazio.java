@@ -1,7 +1,7 @@
 package src.campoMinado;
 
 /**
- * The type Vazio.
+ * Tipo de conteúdo oculto vazio.
  */
 public class Vazio extends Conteudo {
     //Métodos ----------------------------------------------------------------------------------------------------------

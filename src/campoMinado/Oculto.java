@@ -1,6 +1,5 @@
 package src.campoMinado;
 
-
 /**
  * Interface para um elemento oculto.
  */

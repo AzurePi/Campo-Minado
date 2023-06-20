@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="reorganização">
+    <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="progresso no placar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TelaInicialGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MenuInicialGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/campoMinado/Oculto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Oculto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/campoMinado/Vazio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Vazio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/placar/Placar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/Placar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/placar/Pontuacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/Pontuacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/placar/PontuacaoDificil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/PontuacaoDificil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/placar/PontuacaoFacil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/PontuacaoFacil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/placar/PontuacaoMedio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/PontuacaoMedio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,32 +79,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ppcar/IdeaProjects/Campo-Minado/documentation/propostaInicial&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/ppcar/Downloads/SuperTrunfo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Azure\IdeaProjects\Campo-Minado\GUI\assets" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="src" />
     </key>
   </component>
   <component name="RunManager">
@@ -128,7 +136,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684787029436</updated>
-      <workItem from="1687049473384" duration="7765000" />
+      <workItem from="1687049473384" duration="8157000" />
+      <workItem from="1687115215742" duration="13361000" />
+      <workItem from="1687231061882" duration="7537000" />
     </task>
     <task id="LOCAL-00001" summary="begin">
       <created>1685040979534</created>
@@ -151,7 +161,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687052411019</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="reorganização">
+      <created>1687058148142</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687058148142</updated>
+    </task>
+    <task id="LOCAL-00005" summary="progresso no placar">
+      <created>1687131559703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687131559703</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +195,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="begin" />
     <MESSAGE value="reorganização" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganização" />
+    <MESSAGE value="progresso no placar" />
+    <option name="LAST_COMMIT_MESSAGE" value="progresso no placar" />
   </component>
 </project>
