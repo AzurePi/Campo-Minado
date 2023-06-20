@@ -19,7 +19,7 @@ import static src.Main.f;
 /**
  * O painel (extende <code>JPanel</code>) do menu inicial do campo minado. <br>Implementa <code>ActionListener</code> para gerenciar as ações dos botões de JOptionPane. Implementa <code>MouseListener</code> para gerenciar o comportamento dos <code>BotaoCampoMinado</code> que compõem o tabuleiro.
  * <br>
- * Possui um cronômetro, um contador de bandeiras, e um contador de cliques .
+ * Possui um cronômetro, um contador de bandeiras, e um contador de cliques.
  */
 public class TabuleiroGUI extends JPanel implements MouseListener, ActionListener {
     private Tabuleiro t;
@@ -29,8 +29,6 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     private boolean cronometroIniciado;
     private final JLabel labelCronometro;
     private final JLabel labelBandeiras;
-    private ImageIcon iconeBomba;
-    private ImageIcon iconeBandeira;
     private int cliques;
     private int segundos;
     private int minutos;
@@ -42,14 +40,12 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     //Construtor -------------------------------------------------------------------------------------------------------
 
     /**
-     * Contrói um novo painel de tabuleiro. Define ícones para bomba e bandeira, inicializa uma label para o cronômetro, e inicializa fontes e cores.
+     * Contrói um novo painel de tabuleiro. Define um ícone para a bandeira, inicializa uma label para o cronômetro, e inicializa fontes e cores.
      */
     public TabuleiroGUI() {
-        iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
-        iconeBomba = new ImageIcon(iconeBomba.getImage().getScaledInstance(10, 10, Image.SCALE_DEFAULT));
 
         //cria um ícone, e com base nele cria uma versão escalonada
-        iconeBandeira = new ImageIcon("src/GUI/assets/noun-flag-5786229.png");
+        ImageIcon iconeBandeira = new ImageIcon("src/GUI/assets/noun-flag-5786229.png");
         iconeBandeira = new ImageIcon(iconeBandeira.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 
         labelCronometro = new JLabel();
@@ -129,9 +125,9 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     }
 
     /**
-     * Cria um JOptionPane para infromar o resultado do jogo.
+     * Cria um JOptionPane para informar o resultado do jogo.
      * <br>
-     * Se é vitória, permite a inserção de um nome para armazenamento da poontuação em um <code>Placar</code>.
+     * Se é vitória, permite a inserção de um nome para armazenamento da pontuação em um <code>Placar</code>.
      *
      * @param venceu se o encerramento do jogo é devido à vitória, ou derrota.
      */
@@ -160,7 +156,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
                             "SeuNome"));
 
                     if (nome != null)
-                        mainPanel.getPlacar().adicionarPontuacao(score, nome, tamanho);
+                        mainPanel.getPlacarGUI().adicionarPontuacao(score, nome, tamanho);
                     flag = false;
                 } catch (InvalidNameException e) {
                     JOptionPane.showMessageDialog(f, e.getMessage(), "ERRO", JOptionPane.PLAIN_MESSAGE);
@@ -203,6 +199,11 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         return (int) ((1 / (float) cliques) * (1 / (float) tempo) * 1000000);
     }
 
+    /**
+     * Percorre o <code>Tabuleiro</code> e compara com os <code>BotaoCampoMinado</code> já clicados, verificando se já chegamos ao final do jogo.
+     *
+     * @return <code>true</code> se todos os <code>BotaoCampoMinado</code> que não contém bombas já foram clicados, <code>false</code> do contrário
+     */
     public boolean jaAcabou() {
         int i = 0;
         int j = 0;
@@ -222,12 +223,27 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         return true;
     }
 
+    /**
+     * Remove todos os elementos da GUI para permitir uma posterior reinicialização.
+     */
     private void destruir() {
         while (this.getComponentCount() != 0)
             this.remove(0);
     }
 
     //Mouse Listener ---------------------------------------------------------------------------------------------------
+
+    /**
+     * Inicia o cronômetro, caso este ainda não esteja iniciado, e analisa um clique em um <code>BotaoCampoMinado</code>.
+     * <br>
+     * Se o clique ocorre com o botão esquerdo, é feita uma análise do conteúdo do <code>Quadrado</code> correspondente em <code>Tabuleiro</code>, e o procedimento adequado é tomado.
+     * <br>
+     * Se o clique ocorre com o botão direito, o botão é marcado com uma bandeira, e cliques posteriores com o botão esquerdo são ignorados. O contador de bandeiras é atualizado de acordo.
+     * <br>
+     * Quando o clique ocorre em uma bomba, o jogo é encerrado como uma derrota. A cada clique,uma verificação é feita para a condição de vitória.
+     *
+     * @param e o evento sendo processado, oriundo de um clique em um <code>BotaoCampoMinado</code>
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         if (!cronometroIniciado)
@@ -290,6 +306,9 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     public void mouseExited(MouseEvent e) {
     }
 
+    /**
+     * Percorre o <code>Tabuleiro</code>, verificando o <code>Conteudo</code> de todos os <code>Quadrado</code>. Sempre que uma <code>Bomba</code> é encontrada, atualiza a GUI de acordo.
+     */
     private void abrirBombas() {
         int conteudo;
 
@@ -307,6 +326,13 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         }
     }
 
+    /**
+     * Função recursiva que permite que o clique em um <code>BotaoCampoMinado</code> que equivale a um <code>Quadrado</code> com <code>Conteudo</code> <code>Vazio</code> revele o conteúdo de todos os quadrados <code>Vazio</code> e <code>Numerado</code> ao seu redor.
+     * Ao final de seu percurso, faz com que todos os botões que percorreu que não equivaliam a bombas sejam marcados como clicados.
+     *
+     * @param linha a linha em que o botão atual se encontra
+     * @param coluna a coluna em que o botão atual se encontra
+     */
     public void abrirVazio(int linha, int coluna) {
         int conteudo;
 
@@ -328,6 +354,12 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         }
     }
 
+    /**
+     * Atualiza a aparência de um <code>BotaoCampoMinado</code> que equivale a um <code>Quadrado</code> <code>Numerado</code>, e o marca como clicado.
+     *
+     * @param linha a linha em que o botão atual se encontra
+     * @param coluna a linha em que o botão atual se encontra
+     */
     private void abrirNumerado(int linha, int coluna) {
         BotaoCampoMinado numerado = botoes[linha][coluna];
         numerado.setEnabled(false);
@@ -338,6 +370,12 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     }
 
     //Action Listener --------------------------------------------------------------------------------------------------
+
+    /**
+     * Quando o botão "Menu Inicial" é clicado no <code>JOptionPane</code> que anuncia a derrota, muda o painel sendo mostrado pelo <code>CardLayout</code> de <code>MainPanel</code> para o <code>MenuInicialGUI</code>. Posteriormente, destrói os conteúdos de <code>TabuleiroGUI</code> e fecha o <code>JOptionPane</code>.
+     *
+     * @param e o evento sendo processado, um clique no botão de <code>JOptionPane</code>
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();

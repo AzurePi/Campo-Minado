@@ -24,7 +24,7 @@ public class PlacarGUI extends JPanel implements ActionListener {
 
     //Construtor -------------------------------------------------------------------------------------------------------
     /**
-     * Constrói um novo painel de placar, com um botão para retornar ao menu inicial, e uma estrutura de <code>tabs</code> para armazenar os paineis das diferentes dificuldades.
+     * Constrói um novo painel de placar, com um botão para retornar ao menu inicial, e uma estrutura de <code>tabs</code> para armazenar os painéis das diferentes dificuldades.
      */
     public PlacarGUI() {
         //a chamada do construtor de Placar<> já realiza a leitura de eventuais informações de arquivos

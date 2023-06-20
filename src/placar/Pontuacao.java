@@ -4,6 +4,9 @@ import exceptions.InvalidNameException;
 
 import java.io.Serializable;
 
+/**
+ * Classe abstrata de uma pontuação, caracterizada por um <code>nome</code> e <code>pontos</code>.
+ */
 public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
     private final String nome;
     private final int pontos;
@@ -42,10 +45,10 @@ public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
     //Métodos ----------------------------------------------------------------------------------------------------------
 
     /**
-     * Utiliza a mesma lógica de uma comparação convencional de inteiros para organizar as pontuações de acordo com seu valor <code>pontos</code>.
+     * Compara essa <code>Pontuacao</code> com outra <code>o</code> de acordo com seus valores <code>pontos</code>.
      *
      * @param o a <code>Pontuacao</code> sendo comparada
-     * @return
+     * @return um inteiro negativo, zero, ou um inteiro positivo se essa <code>Pontuacao</code> é, respectivamente, maior, igual, ou menor que a outra
      */
     @Override
     public int compareTo(Pontuacao o) {

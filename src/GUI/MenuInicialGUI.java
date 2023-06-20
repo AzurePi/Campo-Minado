@@ -18,7 +18,7 @@ public class MenuInicialGUI extends JPanel implements ActionListener {
     //Construtor -------------------------------------------------------------------------------------------------------
 
     /**
-     * Constrói um novo painel de menu inicial, com um seletor de dificuldade, e botões de Jogar e Placar.
+     * Constrói um novo painel de menu inicial, com um seletor de dificuldade, e botões de "Jogar" e "Placar".
      */
     public MenuInicialGUI() {
         ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
@@ -83,7 +83,7 @@ public class MenuInicialGUI extends JPanel implements ActionListener {
      * <br>
      * Se o botão pressionado é o botão "Placar", troca o painel sendo exibido para o <code>PlacarGUI</code>.
      *
-     * @param e o evento sendo processado, oriundo de um botão
+     * @param e o evento sendo processado, oriundo de um botão no painel
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -95,11 +95,11 @@ public class MenuInicialGUI extends JPanel implements ActionListener {
 
         if (source == botaoJogar) {
             if (facil.isSelected())
-                parent.getTabuleiro().inicializar(5);
+                parent.getTabuleiroGUI().inicializar(5);
             else if (medio.isSelected())
-                parent.getTabuleiro().inicializar(7);
+                parent.getTabuleiroGUI().inicializar(7);
             else if (dificil.isSelected())
-                parent.getTabuleiro().inicializar(11);
+                parent.getTabuleiroGUI().inicializar(11);
 
             layout.show(telas, MainPanel.TABULEIRO); //mostra o tabuleiro na tela
         } else if (source == botaoRecordes)

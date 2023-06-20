@@ -6,7 +6,7 @@ package src.campoMinado;
  * @param <C> O tipo de <code>Conteudo</code> contido no quadrado.
  */
 public class Quadrado<C extends Conteudo> {
-    private C conteudo;
+    private final C conteudo;
 
     //Construtor -------------------------------------------------------------------------------------------------------
 
@@ -26,14 +26,5 @@ public class Quadrado<C extends Conteudo> {
      */
     public C getConteudo() {
         return conteudo;
-    }
-
-    /**
-     * Sobrescreve o conteúdo do <code>Quadrado</code>.
-     *
-     * @param conteudo O <code>Conteudo</code> do quadrado
-     */
-    public void setConteudo(C conteudo) {
-        this.conteudo = conteudo;
     }
 }

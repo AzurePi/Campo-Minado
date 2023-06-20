@@ -1,5 +1,6 @@
 package src;
-/*
+
+/*  Créditos dos ícones
 Bomb by icon 54 from <a href="https://thenounproject.com/browse/icons/term/bomb/" target="_blank" title="Bomb Icons">Noun Project</a>
 Flag by Elliott Counts from <a href="https://thenounproject.com/browse/icons/term/flag/" target="_blank" title="Flag Icons">Noun Project</a>
 */
@@ -27,10 +28,10 @@ public class Main {
 
         MainPanel panel = new MainPanel();
 
-        try{
+        try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        }catch (UnsupportedLookAndFeelException | ClassNotFoundException | IllegalAccessException |
-                InstantiationException e){
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | IllegalAccessException |
+                 InstantiationException e) {
             throw new RuntimeException(e);
         }
 
@@ -42,9 +43,14 @@ public class Main {
             public void windowOpened(WindowEvent e) {
             }
 
+            /**
+             * Ao fechar a janela, salva as informações dos placares em arquivos.
+             *
+             * @param e o evento sendo processado (o fechamento da janela)
+             */
             @Override
             public void windowClosing(WindowEvent e) {
-                panel.getPlacar().salvar();
+                panel.getPlacarGUI().salvar();
             }
 
             @Override
@@ -69,7 +75,6 @@ public class Main {
         });
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(580, 600);
         f.setResizable(false);
 
         f.add(panel);

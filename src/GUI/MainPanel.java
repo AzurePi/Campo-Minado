@@ -46,23 +46,16 @@ public class MainPanel extends JPanel {
     //Setters & Getters ------------------------------------------------------------------------------------------------
 
     /**
-     * @return o painel onde se encontra o menu inicial
-     */
-    public MenuInicialGUI getMenuInicial() {
-        return menuInicial;
-    }
-
-    /**
      * @return o painel onde se encontra o tabuleiro
      */
-    public TabuleiroGUI getTabuleiro() {
+    public TabuleiroGUI getTabuleiroGUI() {
         return tabuleiro;
     }
 
     /**
      * @return o painel onde se encontra o placar
      */
-    public PlacarGUI getPlacar() {
+    public PlacarGUI getPlacarGUI() {
         return placar;
     }
 
@@ -72,7 +65,7 @@ public class MainPanel extends JPanel {
     }
 
     /**
-     * @return o painel que contém os painíis que se alternam por meio do <code>CardLayout</code>
+     * @return o painel que contém os painéis que se alternam por meio do <code>CardLayout</code>
      */
     public JPanel getTelas() {
         return telas;

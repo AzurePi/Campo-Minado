@@ -3,7 +3,7 @@ package src.GUI;
 import javax.swing.*;
 
 /**
- * Extensão de <code>JButton</code> com informações de se já foi clicado e suas coordenadas em uma matriz.
+ * Extensão de <code>JButton</code>, com informações de se já foi clicado e suas coordenadas em uma matriz.
  */
 public class BotaoCampoMinado extends JButton {
     private boolean foiClickado;
@@ -12,7 +12,7 @@ public class BotaoCampoMinado extends JButton {
     //Construtor -------------------------------------------------------------------------------------------------------
 
     /**
-     * Instancia um novo <code>BotaoCampoMinado</code> com as coordenadas especificadas. Esse botão se incia como não clicado.
+     * Instancia um novo <code>BotaoCampoMinado</code> com as coordenadas especificadas. Esse botão se inicia como não clicado.
      *
      * @param i a linha do botão
      * @param j a coluna do botão

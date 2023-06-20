@@ -12,7 +12,7 @@ public class Tabuleiro {
     private final ArrayList<ArrayList<Quadrado<?>>> board;
 
     /**
-     * Instancia um novo <code>Tabuleiro</code>.
+     * Instancia um novo <code>Tabuleiro</code>. De acordo com seu <code>tamanho</code>, determina uma quantidade de bombas.
      *
      * @param tamanho o tamanho do tabuleiro
      */
@@ -29,20 +29,14 @@ public class Tabuleiro {
             case 5 -> nBombas = 6;
             case 7 -> nBombas = 15;
             case 11 -> nBombas = 45;
-            default -> nBombas = 0;
+            default -> nBombas = 1;
         }
 
         iniciaTabuleiro();
         sorteiaMinas();
     }
 
-    /**
-     * @return o tamanho do tabuleiro
-     */
     //Setters & Getters ------------------------------------------------------------------------------------------------
-    public int getTamanho() {
-        return tamanho;
-    }
 
     /**
      * @return o número de bombas no tabuleiro
@@ -130,16 +124,5 @@ public class Tabuleiro {
      */
     public static boolean coordenadaValida(int i, int j, int tamanho) {
         return (i >= 0 && i < tamanho && j >= 0 && j < tamanho);
-    }
-
-    /**
-     * Imprime o tabuleiro, com o conteúdo de seus quadrados revelado, no terminal
-     */
-    public void imprimir() {
-        for (int i = 0; i < tamanho; i++) {
-            for (int j = 0; j < tamanho; j++)
-                System.out.printf(board.get(i).get(j).getConteudo().revelar() + " ");
-            System.out.print("\n");
-        }
     }
 }
