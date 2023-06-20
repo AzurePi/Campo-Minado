@@ -110,7 +110,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     }
 
     /**
-     * Inicializa o cronômetro, com um <code>ActionListener</code> anônimo para contabilizar os segundos
+     * Inicializa o cronômetro, com um <code>ActionListener</code> anônimo para contabilizar a passagem do tempo.
      */
     public void iniciarCronometro() {
         cronometro = new Timer(1000, new ActionListener() {
@@ -128,6 +128,13 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         cronometroIniciado = true;
     }
 
+    /**
+     * Cria um JOptionPane para infromar o resultado do jogo.
+     * <br>
+     * Se é vitória, permite a inserção de um nome para armazenamento da poontuação em um <code>Placar</code>.
+     *
+     * @param venceu se o encerramento do jogo é devido à vitória, ou derrota.
+     */
     public void encerrar(boolean venceu) {
         cronometro.stop();
         cronometroIniciado = false;
@@ -187,6 +194,10 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         }
     }
 
+    /**
+     * Calcula os pontos de um jogo finalizado.
+     * @return a quantidade de pontos
+     */
     private int contabilizaPontos() {
         int tempo = segundos + (minutos * 60);
         return (int) ((1 / (float) cliques) * (1 / (float) tempo) * 1000000);
