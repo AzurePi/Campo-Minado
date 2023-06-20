@@ -1,0 +1,172 @@
+@startuml
+
+package Campo-Minado #EEE{
+    class exceptions.InvalidNameException {
+
+    }
+
+    package src {
+
+        package campoMinado {
+            interface Oculto {
+                ~ int revelar()
+            }
+
+            abstract class Conteudo { }
+
+            class Vazio {
+                + int revelar()
+            }
+
+            class Bomba {
+                + int revelar()
+            }
+
+            class Numerado {
+                - int dica
+                + int revelar()
+            }
+
+            class Quadrado {
+                - C conteudo
+            }
+
+            class Tabuleiro {
+                - int tamanho
+                - int nBombas
+                - ArrayList<ArrayList<Quadrado<?>>> board
+                - void iniciaTabuleiro()
+                - void sorteiaMinas()
+                - void preencheDicas(int,int)
+                + {static} boolean coordenadaValida(int,int,int)
+                + void imprimir()
+            }
+
+            Oculto <|.. Conteudo
+            Conteudo <|-- Vazio
+            Conteudo <|-- Bomba
+            Conteudo <|-- Numerado
+        }
+
+        package placar {
+            abstract class Pontuacao {
+                - String nome
+                - int pontos
+                + int compareTo(Pontuacao)
+                - {static} void validaNome(String)
+            }
+
+            class PontuacaoFacil { }
+            class PontuacaoMedio {}
+            class PontuacaoDificil { }
+
+            class Placar {
+                - ArrayList<P> pontuacoes
+                ~ String filename
+                + void add(P)
+                + void readFromFile()
+                + void printToFile()
+            }
+
+            Pontuacao <|-- PontuacaoFacil
+            Comparable <|.. Pontuacao
+            Pontuacao <|-- PontuacaoDificil
+            Pontuacao <|-- PontuacaoMedio
+        }
+
+        package GUI {
+            class MainPanel {
+                - MenuInicialGUI menuInicial
+                - TabuleiroGUI tabuleiro
+                - PlacarGUI placar
+                + {static} String MENU_INICIAL
+                + {static} String TABULEIRO
+                + {static} String PLACAR
+                - CardLayout layout
+                - JPanel telas
+            }
+
+            class MenuInicialGUI {
+                - JRadioButton facil
+                - JRadioButton medio
+                - JRadioButton dificil
+                - JButton botaoJogar
+                - JButton botaoRecordes
+                + void actionPerformed(ActionEvent)
+            }
+
+            class BotaoCampoMinado {
+                - boolean foiClickado
+                - int i
+                - int j
+            }
+
+            class TabuleiroGUI {
+                - Tabuleiro t
+                - int tamanho
+                - BotaoCampoMinado[][] botoes
+                - Timer cronometro
+                - boolean cronometroIniciado
+                - JLabel labelCronometro
+                - JLabel labelBandeiras
+                - int cliques
+                - int segundos
+                - int minutos
+                - int bandeiras
+                - Color vermelhoBandeira
+                - Color vermelhoBomba
+                - Font fonteBomba
+                + void inicializar(int)
+                + void iniciarCronometro()
+                + void encerrar(boolean)
+                - int contabilizaPontos()
+                + boolean jaAcabou()
+                - void destruir()
+                + void mouseClicked(MouseEvent)
+                - void abrirBombas()
+                + void abrirVazio(int,int)
+                - void abrirNumerado(int,int)
+                + void actionPerformed(ActionEvent)
+            }
+
+            class PlacarGUI {
+                - Placar<PontuacaoFacil> placarF
+                - Placar<PontuacaoMedio> placarM
+                - Placar<PontuacaoDificil> placarD
+                - JPanel painelFacil
+                - JPanel painelMedio
+                - JPanel painelDificil
+                - Font fontePlacar
+                - void atualizar(JPanel,Placar<?>)
+                + void adicionarPontuacao(int,String,int)
+                + void salvar()
+                + void actionPerformed(ActionEvent)
+            }
+
+            JPanel <|-- PlacarGUI
+            JPanel <|-- TabuleiroGUI
+            JButton <|-- BotaoCampoMinado
+            JPanel <|-- MainPanel
+            JPanel <|-- MenuInicialGUI
+        }
+
+        class Main {
+            + {static} JFrame f
+            + {static} void main(String[])
+            - {static} void createAndShowGUI()
+        }
+    }
+
+    exceptions.Exception <|-- exceptions.InvalidNameException
+    java.awt.event.MouseListener <|.. src.GUI.TabuleiroGUI
+    java.awt.event.ActionListener <|.. src.GUI.TabuleiroGUI
+    java.awt.event.ActionListener <|.. src.GUI.PlacarGUI
+    java.awt.event.ActionListener <|.. src.GUI.MenuInicialGUI
+    java.io.Serializable <|.. src.placar.Pontuacao
+
+       Main <-- GUI
+       GUI <-- campoMinado
+       GUI <-- placar
+}
+@enduml
+

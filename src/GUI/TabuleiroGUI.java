@@ -64,7 +64,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     //Métodos ----------------------------------------------------------------------------------------------------------
 
     /**
-     * Inicializa o tabuleiro com <code>tamanho</code> (dificuldade), criando um novo <code>Tabuleiro</code>, estabelecendo um <code>GridLayout</code> para organizar as labels do cronômetro, do conados de bandeiras, e os <code>BotaocampoMinado/code>.
+     * Inicializa o tabuleiro com <code>tamanho</code> (dificuldade), criando um novo <code>Tabuleiro</code>, estabelecendo um <code>GridLayout</code> para organizar as labels do cronômetro, do contador de bandeiras, e os <code>BotaocampoMinado</code>.
      *
      * @param tamanho define a dificuldade do jogo, e tamanho utilizado em <code>GridLayout</code>
      */

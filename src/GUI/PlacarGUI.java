@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 /**
  * O painel (extende <code>JPanel</code>) do placar do campo minado. <br>Implementa <code>ActionListener</code> para gerenciar as ações de seus próprios botões.
  * <br>
- * Possui três paineis associados a um <code>Placar<></code> cada, um para cada dificuldade de jogo.
+ * Possui três paineis associados a um <code>Placar</code> cada, um para cada dificuldade de jogo.
  */
 public class PlacarGUI extends JPanel implements ActionListener {
     private final Placar<PontuacaoFacil> placarF;
