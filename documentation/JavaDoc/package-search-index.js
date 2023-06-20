@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"exceptions"},{"l":"src"},{"l":"src.campoMinado"},{"l":"src.GUI"},{"l":"src.placar"}];updateSearchResults();
