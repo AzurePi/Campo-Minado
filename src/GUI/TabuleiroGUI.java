@@ -16,10 +16,15 @@ import java.util.ArrayList;
 
 import static src.Main.f;
 
+/**
+ * O painel (extende <code>JPanel</code>) do menu inicial do campo minado. <br>Implementa <code>ActionListener</code> para gerenciar as ações dos botões de JOptionPane. Implementa <code>MouseListener</code> para gerenciar o comportamento dos <code>BotaoCampoMinado</code> que compõem o tabuleiro.
+ * <br>
+ * Possui um cronômetro, um contador de bandeiras, e um contador de cliques .
+ */
 public class TabuleiroGUI extends JPanel implements MouseListener, ActionListener {
     private Tabuleiro t;
     private int tamanho;
-    private NossoBotao[][] botoes;
+    private BotaoCampoMinado[][] botoes;
     private Timer cronometro;
     private boolean cronometroIniciado;
     private final JLabel labelCronometro;
@@ -35,6 +40,10 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     private final Font fonteBomba;
 
     //Construtor -------------------------------------------------------------------------------------------------------
+
+    /**
+     * Contrói um novo painel de tabuleiro. Define ícones para bomba e bandeira, inicializa uma label para o cronômetro, e inicializa fontes e cores.
+     */
     public TabuleiroGUI() {
         iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
         iconeBomba = new ImageIcon(iconeBomba.getImage().getScaledInstance(10, 10, Image.SCALE_DEFAULT));
@@ -56,116 +65,13 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         vermelhoBandeira = new Color(234, 119, 119);
     }
 
-    //Setters & Getters ------------------------------------------------------------------------------------------------
-    public Tabuleiro getT() {
-        return t;
-    }
-
-    public void setT(Tabuleiro t) {
-        this.t = t;
-    }
-
-    public int getTamanho() {
-        return tamanho;
-    }
-
-    public void setTamanho(int tamanho) {
-        this.tamanho = tamanho;
-    }
-
-    public NossoBotao[][] getBotoes() {
-        return botoes;
-    }
-
-    public void setBotoes(NossoBotao[][] botoes) {
-        this.botoes = botoes;
-    }
-
-    public Timer getCronometro() {
-        return cronometro;
-    }
-
-    public void setCronometro(Timer cronometro) {
-        this.cronometro = cronometro;
-    }
-
-    public boolean isCronometroIniciado() {
-        return cronometroIniciado;
-    }
-
-    public void setCronometroIniciado(boolean cronometroIniciado) {
-        this.cronometroIniciado = cronometroIniciado;
-    }
-
-    public JLabel getLabelCronometro() {
-        return labelCronometro;
-    }
-
-    public JLabel getLabelBandeiras() {
-        return labelBandeiras;
-    }
-
-    public ImageIcon getIconeBomba() {
-        return iconeBomba;
-    }
-
-    public void setIconeBomba(ImageIcon iconeBomba) {
-        this.iconeBomba = iconeBomba;
-    }
-
-    public ImageIcon getIconeBandeira() {
-        return iconeBandeira;
-    }
-
-    public void setIconeBandeira(ImageIcon iconeBandeira) {
-        this.iconeBandeira = iconeBandeira;
-    }
-
-    public int getCliques() {
-        return cliques;
-    }
-
-    public void setCliques(int cliques) {
-        this.cliques = cliques;
-    }
-
-    public int getSegundos() {
-        return segundos;
-    }
-
-    public void setSegundos(int segundos) {
-        this.segundos = segundos;
-    }
-
-    public int getMinutos() {
-        return minutos;
-    }
-
-    public void setMinutos(int minutos) {
-        this.minutos = minutos;
-    }
-
-    public int getBandeiras() {
-        return bandeiras;
-    }
-
-    public void setBandeiras(int bandeiras) {
-        this.bandeiras = bandeiras;
-    }
-
-    public Color getVermelhoBandeira() {
-        return vermelhoBandeira;
-    }
-
-    public Color getVermelhoBomba() {
-        return vermelhoBomba;
-    }
-
-    public Font getFonteBomba() {
-        return fonteBomba;
-    }
-
     //Métodos ----------------------------------------------------------------------------------------------------------
+
+    /**
+     * Inicializa o tabuleiro com <code>tamanho</code> (dificuldade), criando um novo <code>Tabuleiro</code>, estabelecendo um <code>GridLayout</code> para organizar as labels do cronômetro, do conados de bandeiras, e os <code>BotaocampoMinado/code>.
+     *
+     * @param tamanho define a dificuldade do jogo, e tamanho utilizado em <code>GridLayout</code>
+     */
     public void inicializar(int tamanho) {
         this.tamanho = tamanho;
         t = new Tabuleiro(tamanho);
@@ -189,20 +95,23 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
         this.add(labelBandeiras);
         //----------------------------------------------------------------------------
 
-        botoes = new NossoBotao[tamanho][tamanho];
+        botoes = new BotaoCampoMinado[tamanho][tamanho];
 
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
-                NossoBotao botao = new NossoBotao(i, j);
+                BotaoCampoMinado botao = new BotaoCampoMinado(i, j);
                 botao.addMouseListener(this);
 
                 botoes[i][j] = botao;
                 this.add(botao);
             }
         }
-        t.imprimir();        //caso queiramos imprimir o campo no terminal
+        //t.imprimir();        //caso queiramos imprimir o campo no terminal
     }
 
+    /**
+     * Inicializa o cronômetro, com um <code>ActionListener</code> anônimo para contabilizar os segundos
+     */
     public void iniciarCronometro() {
         cronometro = new Timer(1000, new ActionListener() {
             @Override
@@ -314,7 +223,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
             iniciarCronometro();
 
         int button = e.getButton();
-        NossoBotao source = (NossoBotao) e.getSource();
+        BotaoCampoMinado source = (BotaoCampoMinado) e.getSource();
 
         //botão esquerdo ≥ revela o conteúdo
         //botão direito ≥ coloca uma bandeira
@@ -377,7 +286,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
             for (int j = 0; j < tamanho; j++) {
                 conteudo = t.getBoard().get(i).get(j).getConteudo().revelar();
                 if (conteudo == -1) {
-                    NossoBotao aux = botoes[i][j];
+                    BotaoCampoMinado aux = botoes[i][j];
                     aux.setEnabled(false);
                     aux.setText("Bomba");
                     aux.setFont(fonteBomba);
@@ -390,7 +299,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     public void abrirVazio(int linha, int coluna) {
         int conteudo;
 
-        NossoBotao botao = botoes[linha][coluna];
+        BotaoCampoMinado botao = botoes[linha][coluna];
         if (botao.isEnabled())
             botao.setEnabled(false);
         botao.setFoiClickado(true);
@@ -409,7 +318,7 @@ public class TabuleiroGUI extends JPanel implements MouseListener, ActionListene
     }
 
     private void abrirNumerado(int linha, int coluna) {
-        NossoBotao numerado = botoes[linha][coluna];
+        BotaoCampoMinado numerado = botoes[linha][coluna];
         numerado.setEnabled(false);
         numerado.setFoiClickado(true);
 

@@ -9,6 +9,14 @@ public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
     private final int pontos;
 
     //Construtor -------------------------------------------------------------------------------------------------------
+
+    /**
+     * Construtor abstrato de <code>Pontuacao</code>, utilizado por seus herdeiros.
+     *
+     * @param nome o nome associado à pontuação
+     * @param pontos quantidade de pontos
+     * @throws InvalidNameException m nome é considerado inválido se tem menos de 3 caracteres, ou mais de 12; se não começa com uma letra; ou se possui algum caractere alfanumérico.
+     */
     public Pontuacao(String nome, int pontos) throws InvalidNameException {
         validaNome(nome);
         this.nome = nome;
@@ -16,15 +24,29 @@ public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
     }
 
     //Setters & Getters ------------------------------------------------------------------------------------------------
+
+    /**
+     * @return o nome associado à pontuação
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * @return a quantidade de pontos
+     */
     public int getPontos() {
         return pontos;
     }
 
     //Métodos ----------------------------------------------------------------------------------------------------------
+
+    /**
+     * Utiliza a mesma lógica de uma comparação convencional de inteiros para organizar as pontuações de acordo com seu valor <code>pontos</code>.
+     *
+     * @param o a <code>Pontuacao</code> sendo comparada
+     * @return
+     */
     @Override
     public int compareTo(Pontuacao o) {
         Integer esse = this.pontos;
@@ -32,6 +54,12 @@ public abstract class Pontuacao implements Comparable<Pontuacao>, Serializable {
         return aquele.compareTo(esse);
     }
 
+    /**
+     * Verifica se um <code>nome</code> se enquadra nos padrões esperados.
+     *
+     * @param nome o nome sendo validado
+     * @throws InvalidNameException um nome é considerado inválido se tem menos de 3 caracteres, ou mais de 12; se não começa com uma letra; ou se possui algum caractere alfanumérico.
+     */
     private static void validaNome(String nome) throws InvalidNameException {
         int length = nome.length();
 

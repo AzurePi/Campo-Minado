@@ -18,7 +18,7 @@ public class MenuInicialGUI extends JPanel implements ActionListener {
     //Construtor -------------------------------------------------------------------------------------------------------
 
     /**
-     * Instantiates a new Menu inicial gui.
+     * Constrói um novo painel de menu inicial, com um seletor de dificuldade, e botões de Jogar e Placar.
      */
     public MenuInicialGUI() {
         ImageIcon iconeBomba = new ImageIcon("src/GUI/assets/noun-bomb-238911.png");
@@ -77,6 +77,14 @@ public class MenuInicialGUI extends JPanel implements ActionListener {
     }
 
     //Métodos ----------------------------------------------------------------------------------------------------------
+
+    /**
+     * Se o botão pressionado é o botão "Jogar", inicializa a tela do tabuleiro com o tamanho equivalente à dificuldade selecionada e troca o painel sneod exibido pelo <code>CardLayout</code> para o <code>TabuleiroGUI</code>.
+     * <br>
+     * Se o botão pressionado é o botão "Placar", troca o painel sendo exibido para o <code>PlacarGUI</code>.
+     *
+     * @param e o evento sendo processado, oriundo de um botão
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();

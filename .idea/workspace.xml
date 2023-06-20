@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24d17549-a7cf-4811-8c4b-c697907285c8" name="Changes" comment="progresso no placar">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PlacarGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TabuleiroGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/campoMinado/Tabuleiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/MenuInicialGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MenuInicialGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/placar/Placar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/Placar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/Pontuacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/Pontuacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/PontuacaoDificil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/PontuacaoDificil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/PontuacaoFacil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/PontuacaoFacil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/PontuacaoMedio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/PontuacaoMedio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/files/placarDificil.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/files/placarDificil.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/files/placarFacil.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/files/placarFacil.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/placar/files/placarMedio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/placar/files/placarMedio.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687131559703</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="progresso no placar">
+      <created>1687290591195</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687290591195</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
