@@ -6,6 +6,7 @@ package Campo-Minado #EEE{
     }
 
     package src {
+        note "setters & getters omitidos para maior clareza" as N1
 
         package campoMinado {
             interface Oculto {
@@ -27,7 +28,7 @@ package Campo-Minado #EEE{
                 + int revelar()
             }
 
-            class Quadrado {
+            class Quadrado <C extends Conteudo>{
                 - C conteudo
             }
 
@@ -46,6 +47,9 @@ package Campo-Minado #EEE{
             Conteudo <|-- Vazio
             Conteudo <|-- Bomba
             Conteudo <|-- Numerado
+
+            Tabuleiro *-- Quadrado
+            Quadrado *-- Conteudo
         }
 
         package placar {
@@ -60,7 +64,7 @@ package Campo-Minado #EEE{
             class PontuacaoMedio {}
             class PontuacaoDificil { }
 
-            class Placar {
+            class Placar <P extends Pontuacao> {
                 - ArrayList<P> pontuacoes
                 ~ String filename
                 + void add(P)
@@ -68,10 +72,13 @@ package Campo-Minado #EEE{
                 + void printToFile()
             }
 
-            Pontuacao <|-- PontuacaoFacil
             Comparable <|.. Pontuacao
+            Pontuacao <|-- PontuacaoFacil
             Pontuacao <|-- PontuacaoDificil
             Pontuacao <|-- PontuacaoMedio
+
+            Placar *-up- Pontuacao
+            Pontuacao -left-> InvalidNameException
         }
 
         package GUI {
@@ -143,11 +150,11 @@ package Campo-Minado #EEE{
                 + void actionPerformed(ActionEvent)
             }
 
-            JPanel <|-- PlacarGUI
-            JPanel <|-- TabuleiroGUI
-            JButton <|-- BotaoCampoMinado
-            JPanel <|-- MainPanel
-            JPanel <|-- MenuInicialGUI
+            TabuleiroGUI *-left- BotaoCampoMinado
+
+            MainPanel *-left- MenuInicialGUI
+            MainPanel *-down- TabuleiroGUI
+            MainPanel *-right- PlacarGUI
         }
 
         class Main {
@@ -155,18 +162,15 @@ package Campo-Minado #EEE{
             + {static} void main(String[])
             - {static} void createAndShowGUI()
         }
+
+        Main *-- MainPanel
+
+        TabuleiroGUI o-left- Tabuleiro
+        PlacarGUI o-right- Placar
     }
 
-    exceptions.Exception <|-- exceptions.InvalidNameException
-    java.awt.event.MouseListener <|.. src.GUI.TabuleiroGUI
-    java.awt.event.ActionListener <|.. src.GUI.TabuleiroGUI
-    java.awt.event.ActionListener <|.. src.GUI.PlacarGUI
-    java.awt.event.ActionListener <|.. src.GUI.MenuInicialGUI
-    java.io.Serializable <|.. src.placar.Pontuacao
 
-       Main <-- GUI
-       GUI <-- campoMinado
-       GUI <-- placar
+
 }
 @enduml
 
